@@ -152,7 +152,7 @@ wayland = {
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification
       };
        
-       gestures = { workspace_swipe = true; };
+       #gestures = { workspace_swipe = true; };
 
        device = {
        name = "epic-mouse-v1";
