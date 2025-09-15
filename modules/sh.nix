@@ -28,6 +28,7 @@ fi'';
       echo "📝 Final commit..."
       jrj
       echo "✅ All updates completed!"
+      sm
    '';
    sec= ''   
       echo "🔧 Updating flake..."
