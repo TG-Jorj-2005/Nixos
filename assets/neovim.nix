@@ -73,7 +73,7 @@ let
     # Parsare argumente
     FORCE_SUDO=false
     NO_SUDO=false
-    CREATE_FILE=false
+    CREATE_FILE=true
     BACKUP=false
     FILE=""
     
