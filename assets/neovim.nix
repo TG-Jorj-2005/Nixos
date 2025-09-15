@@ -222,6 +222,8 @@ let
         spec = {
           -- Import LazyVim și plugin-urile sale
           { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+
+
           
           
           -- Plugin-uri custom
@@ -296,6 +298,7 @@ let
 
   home.packages = [
     nvim-edit
+    pkgs.vimPlugins.nvim-treesitter
   ];
 
   programs.zsh.shellAliases = {
