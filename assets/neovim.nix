@@ -18,7 +18,6 @@
       
       # Core utilities
       plenary-nvim
-      nvim-lua-utils
       
       # File explorer
       nvim-tree-lua
