@@ -5,7 +5,6 @@
 	      ./modules/git.nix
 	      ./modules/starhip.nix
 	      ./modules/waybar.nix
-	      ./assets/neovim.nix
 	      ./modules/rofi.nix
 	      ./modules/alacritty.nix
 	      ./modules/rust.nix
