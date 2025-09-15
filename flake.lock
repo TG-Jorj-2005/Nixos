@@ -109,22 +109,6 @@
         "type": "github"
       }
     },
-    "plugin-onedark": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1753880211,
-        "narHash": "sha256-gXwKjdS3oCl4GOWFn8rFZtZvmpI7COy0S2dXRnUekeE=",
-        "owner": "navarasu",
-        "repo": "onedark.nvim",
-        "rev": "de495fabe171d48aed5525f002d14414efcecbb2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "navarasu",
-        "repo": "onedark.nvim",
-        "type": "github"
-      }
-    },
     "poetry2nix": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -175,7 +159,6 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "plugin-onedark": "plugin-onedark",
         "pyprland": "pyprland"
       }
     },
