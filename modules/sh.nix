@@ -46,6 +46,7 @@ fi'';
      fi
      done
 '';
+    sm = ''sudo chown -R jorj:users *'';
     };
 in
 {
