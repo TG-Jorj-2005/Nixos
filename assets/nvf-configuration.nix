@@ -1,11 +1,10 @@
 { pkgs, lib, ... }:
 {
-vim.theme.enable = true;
-vim.theme.name = "gruvbox";
-vim.theme.style = "dark";
-
-vim.languages.nix.enable = true;
-
+vim={
+  theme={
+       name = "gruvbox";
+       style = "dark";
+};
 statusline.lualine.enable = true;
 telescope.enable = true;
 autocomplete.nvim-cmp.enable = true;
@@ -18,6 +17,6 @@ languages = {
   ts.enable = true;
   rust.enable = true;
  
-
+   };
  };
 }
