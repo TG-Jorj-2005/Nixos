@@ -1,5 +1,4 @@
 { inputs, config, pkgs, lib, ... }:
-
 {
   imports = [ ./modules/sh.nix
               ./modules/hyprland.nix
@@ -10,7 +9,6 @@
 	      ./modules/rofi.nix
 	      ./modules/alacritty.nix
 	      ./modules/rust.nix
-        ./assets/tmux.nix
 		       ];
 
 
