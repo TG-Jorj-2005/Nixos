@@ -19,6 +19,8 @@
     set -g default-terminal "tmux-256color"
     set -ag terminal-overrides ",xterm-256color:RGB"
     set -g prefix C-s
+    unbind C-b
+    bind C-s send -prefix
     set -g mouse on
     set-window-option -g mode-keys vi
     bind-key h select-pane -L
