@@ -199,8 +199,8 @@ let
 
     extraLuaConfig = ''
       -- FIX pentru Nix: Disable Lua cache complet
-      vim.loader.disable()
-      
+       vim.loader.enable(false)
+     
       -- Setează directoarele de cache în locații writable
       local cache_dir = vim.fn.expand("~/.cache/nvim")
       vim.fn.system("mkdir -p " .. cache_dir)
