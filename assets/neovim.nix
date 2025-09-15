@@ -275,6 +275,11 @@ let
           },
         },
       })
+      require("catppuccin").setup {
+      flavour = "mocha", 
+          },
+
+      vim.cmd.colorscheme "catppuccin",
       
       -- Extra fix pentru cache-ul problematic
       vim.api.nvim_create_autocmd("VimEnter", {
