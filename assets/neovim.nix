@@ -170,121 +170,12 @@ let
         ${pkgs.neovim}/bin/nvim "$FILE"
     fi
   '';
-
-  # Script pentru configurarea rapidă LazyVim
-  setup-lazyvim = pkgs.writeShellScriptBin "setup-lazyvim" ''
-    #!/usr/bin/env zsh
-    
-    NVIM_CONFIG="$HOME/.config/nvim"
-    NVIM_DATA="$HOME/.local/share/nvim"
-    
-    echo "🚀 Configurez LazyVim..."
-    
-    # Backup configurația existentă
-    if [ -d "$NVIM_CONFIG" ]; then
-        echo "📦 Creez backup..."
-        mv "$NVIM_CONFIG" "''${NVIM_CONFIG}.backup.$(date +%Y%m%d_%H%M%S)"
-    fi
-        if [ -d "$NVIM_DATA" ]; then
-        mv "$NVIM_DATA" "''${NVIM_DATA}.backup.$(date +%Y%m%d_%H%M%S)"
-    fi
-    
-    # Configurare LazyVim
-    mkdir -p "$NVIM_CONFIG/lua/config"
-    mkdir -p "$NVIM_CONFIG/lua/plugins"
-    
-    # Init.lua principal
-    cat > "$NVIM_CONFIG/init.lua" << 'EOF'
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git", "clone", "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
--- Configurația de bază
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
--- Setup LazyVim
-require("lazy").setup({
-  spec = {
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.editor.mini-files" },
-    { import = "plugins" },
-  },
-  defaults = { lazy = false, version = false },
-  checker = { enabled = true },
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        "gzip", "matchit", "matchparen", "netrwPlugin",
-        "tarPlugin", "tohtml", "tutor", "zipPlugin",
-      },
-    },
-  },
-})
-EOF
-
-    # Plugin pentru editare cu sudo
-    cat > "$NVIM_CONFIG/lua/plugins/sudo.lua" << 'EOF'
-return {
-  "lambdalisue/suda.vim",
-  cmd = { "SudaRead", "SudaWrite" },
-  keys = {
-    { "<leader>W", "<cmd>SudaWrite<cr>", desc = "Sudo Write" },
-    { "<leader>R", "<cmd>SudaRead<cr>", desc = "Sudo Read" },
-  },
-  config = function()
-    vim.g.suda_smart_edit = 1
-  end,
-}
-EOF
-
-    # Configurații extra
-    cat > "$NVIM_CONFIG/lua/plugins/extras.lua" << 'EOF'
-return {
-  -- File manager îmbunătățit
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    keys = {
-      { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle Neo-tree" },
-      { "<leader>E", "<cmd>Neotree focus<cr>", desc = "Focus Neo-tree" },
-    },
-  },
-  
-  -- Terminal integrat
-  {
-    "akinsho/toggleterm.nvim",
-    keys = {
-      { "<C-\\>", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
-    },
-    opts = {
-      direction = "horizontal",
-      size = 15,
-    },
-  },
-}
-EOF
-
-    echo "✅ LazyVim configurat!"
-    echo "🎯 Lansează 'nvim-edit' pentru a începe!"
-    echo "🔑 Comenzi utile:"
-    echo "   - <leader>W  → Salvează cu sudo"
-    echo "   - <leader>e  → Toggle file explorer"
-    echo "   - <C-\\>     → Toggle terminal"
-  '';
-
-in {
+ in {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
+    viAlias = false;
+    vimAlias = false;
     
     extraPackages = with pkgs; [
       # LSP servers
@@ -305,12 +196,82 @@ in {
       python3
       gcc
     ];
+
+    extraLuaConfig = ''
+      -- Bootstrap lazy.nvim
+      local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+      if not (vim.uv or vim.loop).fs_stat(lazypath) then
+        local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+        vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+      end
+      vim.opt.rtp:prepend(lazypath)
+
+      -- Configurația de bază
+      vim.g.mapleader = " "
+      vim.g.maplocalleader = "\\"
+
+      -- Setup LazyVim
+      require("lazy").setup({
+        spec = {
+          -- Import LazyVim și plugin-urile sale
+          { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+          
+          -- Extras utile
+          { import = "lazyvim.plugins.extras.editor.mini-files" },
+          { import = "lazyvim.plugins.extras.coding.copilot" },
+          { import = "lazyvim.plugins.extras.lang.nix" },
+          
+          -- Plugin-uri custom
+          {
+            "lambdalisue/suda.vim",
+            cmd = { "SudaRead", "SudaWrite" },
+            keys = {
+              { "<leader>W", "<cmd>SudaWrite<cr>", desc = "Sudo Write" },
+              { "<leader>R", "<cmd>SudaRead<cr>", desc = "Sudo Read" },
+            },
+            config = function()
+              vim.g.suda_smart_edit = 1
+            end,
+          },
+          
+          {
+            "nvim-neo-tree/neo-tree.nvim",
+            keys = {
+              { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle Neo-tree" },
+              { "<leader>E", "<cmd>Neotree focus<cr>", desc = "Focus Neo-tree" },
+            },
+          },
+          
+          {
+            "akinsho/toggleterm.nvim",
+            keys = {
+              { "<C-\\>", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+            },
+            opts = {
+              direction = "horizontal",
+              size = 15,
+            },
+          },
+        },
+        defaults = { 
+          lazy = false, 
+          version = false,
+        },
+        checker = { enabled = true },
+        performance = {
+          rtp = {
+            disabled_plugins = {
+              "gzip", "matchit", "matchparen", "netrwPlugin",
+              "tarPlugin", "tohtml", "tutor", "zipPlugin",
+            },
+          },
+        },
+      })
+    '';
   };
 
-  # Adaugă scripturile în sistem
   home.packages = [
     nvim-edit
-    setup-lazyvim
   ];
 
   programs.zsh.shellAliases = {
@@ -321,7 +282,6 @@ in {
     edit = "nvim-edit";
   };
 
-  # Configurare Git pentru a folosi editorul nostru
   programs.git.extraConfig = {
     core.editor = "nvim-edit";
   };
