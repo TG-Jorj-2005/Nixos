@@ -197,7 +197,14 @@ let
       gcc
     ];
 
-    extraLuaConfig = ''
+   extraLuaConfig = ''
+      -- FIX pentru Nix: Disable Lua cache complet
+      vim.loader.disable()
+      
+      -- Setează directoarele de cache în locații writable
+      local cache_dir = vim.fn.expand("~/.cache/nvim")
+      vim.fn.system("mkdir -p " .. cache_dir)
+      
       -- Bootstrap lazy.nvim
       local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
       if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -259,6 +266,9 @@ let
         },
         checker = { enabled = true },
         performance = {
+          cache = {
+            enabled = false,  -- Disable cache complet pentru Nix
+          },
           rtp = {
             disabled_plugins = {
               "gzip", "matchit", "matchparen", "netrwPlugin",
@@ -266,6 +276,24 @@ let
             },
           },
         },
+      })
+      
+      -- Extra fix pentru cache-ul problematic
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+          -- Asigură-te că directoarele există
+          local dirs = {
+            vim.fn.stdpath("data"),
+            vim.fn.stdpath("cache"),
+            vim.fn.stdpath("state"),
+          }
+          
+          for _, dir in ipairs(dirs) do
+            if vim.fn.isdirectory(dir) == 0 then
+              vim.fn.mkdir(dir, "p")
+            end
+          end
+        end,
       })
     '';
   };
