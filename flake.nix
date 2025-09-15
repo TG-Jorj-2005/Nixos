@@ -20,7 +20,7 @@
 in
    {
    
-    packages.system.default = (nvf.lib.neovimConfiguration{
+    packages."x86_64-linux".default = (nvf.lib.neovimConfiguration{
     inherit pkgs;
     modules = [ ./assets/nvf-configuration.nix];
       }).neovim;
