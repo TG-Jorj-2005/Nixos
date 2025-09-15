@@ -280,8 +280,6 @@ EOF
   '';
 
 in {
-  programs.zsh.enable = true;
-  # Programul principal Neovim
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -313,7 +311,6 @@ in {
   home.packages = [
     nvim-edit
     setup-lazyvim
-    pkgs.tmux
   ];
 
   programs.zsh.shellAliases = {
