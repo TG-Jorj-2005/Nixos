@@ -29,7 +29,14 @@ fi'';
       jrj
       echo "✅ All updates completed!"
    '';
-
+   sec= ''   
+      echo "🔧 Updating flake..."
+      nfu
+      echo "🏗️  Rebuilding NixOS..."
+      nrb
+      echo "🏠 Updating home-manager..."
+      hmn
+      '';
     };
 in
 {
