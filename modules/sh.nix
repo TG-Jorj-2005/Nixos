@@ -37,6 +37,15 @@ fi'';
       echo "🏠 Updating home-manager..."
       hmn
       '';
+    da = ''
+    cd /home/jorj/.local/share/nvim/lazy
+    for d in */; do
+    if [ -d "$d/.git" ]; then
+    git -C "$d" reset --hard HEAD
+    git -C "$d" clean -fd
+     fi
+     done
+'';
     };
 in
 {
