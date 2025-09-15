@@ -5,7 +5,7 @@ require("lualine").setup({
 })
 
 -- Colorscheme
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme catppuccin")
 
 -- Comment
 require("Comment").setup()
