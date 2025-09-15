@@ -225,7 +225,6 @@ let
           
           -- Extras utile
           { import = "lazyvim.plugins.extras.editor.mini-files" },
-          { import = "lazyvim.plugins.extras.coding.copilot" },
           { import = "lazyvim.plugins.extras.lang.nix" },
           { import = "lazyvim.plugins.extras.lang.typescript" },
           { import = "lazyvim.plugins.extras.lang.python" },
@@ -240,12 +239,8 @@ let
           { import = "lazyvim.plugins.extras.test.core" },
           { import = "lazyvim.plugins.extras.formatting.prettier" },
           { import = "lazyvim.plugins.extras.linting.eslint" },
-          { import = "lazyvim.plugins.extras.util.persistence" },
-          { import = "lazyvim.plugins.extras.ui.colorschemes.catppuccin" },
           { import = "lazyvim.plugins.extras.editor.leap" },
-          { import = "lazyvim.plugins.extras.coding.inc-rename" },
           { import = "lazyvim.plugins.extras.coding.neogen" },
-          { import = "lazyvim.plugins.extras.git" },
           { import = "lazyvim.plugins.extras.lang.docker" },
           { import = "lazyvim.plugins.extras.lang.terraform" },
           { import = "lazyvim.plugins.extras.coding.blink" },
