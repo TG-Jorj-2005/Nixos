@@ -7,7 +7,6 @@
        url = "github:nix-community/home-manager/master";
        inputs.nixpkgs.follows = "nixpkgs";
        };
-       nvf.url = "github:notashelf/nvf";
        pyprland.url = "github:hyprland-community/pyprland";
 
  };
@@ -19,11 +18,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
 in
    {
-   
-    packages."x86_64-linux".default = (nvf.lib.neovimConfiguration{
-    inherit pkgs;
-    modules = [ ./assets/nvf-configuration.nix];
-      }).neovim;
 
     nixosConfigurations={
     Nixos-JRJ-BRW = lib.nixosSystem {
