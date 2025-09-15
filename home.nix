@@ -78,10 +78,6 @@
   fonts.fontconfig.enable = true;
   home.sessionVariables = {
      GTK_THEME = "Catppuccin-Mocha";
-     LIBRARY_PATH = "$HOME/.nix-profile/lib";
-     LD_LIBRARY_PATH = "$HOME/.nix-profile/lib";
-     CPATH = "$HOME/.nix-profile/include";
-     EDITOR = lib.mkForce "vscode";
      TERMINAL = "alacritty";
   };
 
