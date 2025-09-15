@@ -124,8 +124,8 @@
       }
 
       {
-        plugin = gruvbox-nvim;
-        config = "colorscheme gruvbox";
+        plugin = catppuccin-nvim;
+        config = "colorscheme catppuccin";
       }
 
       neodev-nvim
