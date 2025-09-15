@@ -197,7 +197,7 @@ let
       gcc
     ];
 
-   extraLuaConfig = ''
+    extraLuaConfig = ''
       -- FIX pentru Nix: Disable Lua cache complet
       vim.loader.disable()
       
@@ -313,4 +313,18 @@ let
   programs.git.extraConfig = {
     core.editor = "nvim-edit";
   };
+  
+  # Extra configurări pentru Neovim în Nix
+  home.sessionVariables = {
+    # Setează tree-sitter parser directory
+    TREE_SITTER_PARSER_DIR = "$HOME/.local/share/nvim/tree-sitter-parsers";
+  };
+  
+  # Asigură-te că directoarele există la boot
+  home.activation.nvimSetup = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    mkdir -p $HOME/.local/share/nvim/tree-sitter-parsers
+    mkdir -p $HOME/.cache/nvim/{swap,backup,undo}
+    chmod -R 755 $HOME/.local/share/nvim/
+    chmod -R 755 $HOME/.cache/nvim/
+  '';
 }
