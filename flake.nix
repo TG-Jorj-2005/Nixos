@@ -11,7 +11,7 @@
 
  };
 
-  outputs = { self, nixpkgs, home-manager, pyprland, nvf,  ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, pyprland,  ... }@inputs:
   let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
