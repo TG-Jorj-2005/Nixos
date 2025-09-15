@@ -73,7 +73,7 @@ let
     # Parsare argumente
     FORCE_SUDO=false
     NO_SUDO=false
-    CREATE_FILE=true
+    CREATE_FILE=false
     BACKUP=false
     FILE=""
     
@@ -140,7 +140,7 @@ let
             if needs_root "$dir" && [ "$NO_SUDO" = false ]; then
                 sudo mkdir -p "$dir"
             else
-                mkdir -p "$dir"
+                sudo mkdir -p "$dir"
             fi
         fi
         
