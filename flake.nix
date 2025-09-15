@@ -24,7 +24,6 @@ in
       inherit system;
       modules = [
          ./configuration.nix
-         nvf.nixosModules.default
       ];
     };
   };
