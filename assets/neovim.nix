@@ -216,8 +216,6 @@ let
       -- Configurația de bază
       vim.g.mapleader = " "
       vim.g.maplocalleader = "\\"
-      vim.g.catppuccin_flavour = "mocha"  -- sau "latte", "frappe", "macchiato"
-      vim.cmd.colorscheme("catppuccin")
 
       -- Setup LazyVim
       require("lazy").setup({
