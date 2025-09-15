@@ -248,6 +248,7 @@ let
           { import = "lazyvim.plugins.extras.git" },
           { import = "lazyvim.plugins.extras.lang.docker" },
           { import = "lazyvim.plugins.extras.lang.terraform" },
+          { import = "lazyvim.plugins.extras.coding.blink" },
           
           -- Plugin-uri custom
           {
