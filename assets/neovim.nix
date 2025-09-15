@@ -265,7 +265,7 @@ let
         checker = { enabled = true },
         performance = {
           cache = {
-            enabled = false,  -- Disable cache complet pentru Nix
+            enabled = true,  -- Disable cache complet pentru Nix
           },
           rtp = {
             disabled_plugins = {
@@ -275,11 +275,6 @@ let
           },
         },
       })
-      require("catppuccin").setup({
-      flavour = "mocha", 
-          })
-
-      vim.g.colorscheme "catppuccin"
       
       -- Extra fix pentru cache-ul problematic
       vim.api.nvim_create_autocmd("VimEnter", {
