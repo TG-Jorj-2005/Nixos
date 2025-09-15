@@ -1,4 +1,4 @@
-{config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 let
   # Script pentru editare inteligentă
   nvim-edit = pkgs.writeShellScriptBin "nvim-edit" ''
