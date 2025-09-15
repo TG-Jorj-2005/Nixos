@@ -1,4 +1,5 @@
 { config, pkgs, lib, ... }:
+
 let
   # Script pentru editare inteligentă
   nvim-edit = pkgs.writeShellScriptBin "nvim-edit" ''
@@ -197,39 +198,103 @@ let
     ];
 
     extraLuaConfig = ''
-     local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
-end
-vim.opt.rtp:prepend(lazypath)
+      -- FIX pentru Nix: Disable Lua cache complet
+      vim.loader.disable()
+      
+      -- Setează directoarele de cache în locații writable
+      local cache_dir = vim.fn.expand("~/.cache/nvim")
+      vim.fn.system("mkdir -p " .. cache_dir)
+      
+      -- Bootstrap lazy.nvim
+      local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+      if not (vim.uv or vim.loop).fs_stat(lazypath) then
+        local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+        vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+      end
+      vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+      -- Configurația de bază
+      vim.g.mapleader = " "
+      vim.g.maplocalleader = "\\"
 
--- Setup lazy.nvim
-require("lazy").setup({
-  spec = {
-    -- add your plugins here
-  },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
-})
+      -- Setup LazyVim
+      require("lazy").setup({
+        spec = {
+          -- Import LazyVim și plugin-urile sale
+          { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+          
+          -- Extras utile
+          { import = "lazyvim.plugins.extras.editor.mini-files" },
+          { import = "lazyvim.plugins.extras.coding.copilot" },
+          { import = "lazyvim.plugins.extras.lang.nix" },
+          
+          -- Plugin-uri custom
+          {
+            "lambdalisue/suda.vim",
+            cmd = { "SudaRead", "SudaWrite" },
+            keys = {
+              { "<leader>W", "<cmd>SudaWrite<cr>", desc = "Sudo Write" },
+              { "<leader>R", "<cmd>SudaRead<cr>", desc = "Sudo Read" },
+            },
+            config = function()
+              vim.g.suda_smart_edit = 1
+            end,
+          },
+          
+          {
+            "nvim-neo-tree/neo-tree.nvim",
+            keys = {
+              { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle Neo-tree" },
+              { "<leader>E", "<cmd>Neotree focus<cr>", desc = "Focus Neo-tree" },
+            },
+          },
+          
+          {
+            "akinsho/toggleterm.nvim",
+            keys = {
+              { "<C-\\>", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+            },
+            opts = {
+              direction = "horizontal",
+              size = 15,
+            },
+          },
+        },
+        defaults = { 
+          lazy = false, 
+          version = false,
+        },
+        checker = { enabled = true },
+        performance = {
+          cache = {
+            enabled = false,  -- Disable cache complet pentru Nix
+          },
+          rtp = {
+            disabled_plugins = {
+              "gzip", "matchit", "matchparen", "netrwPlugin",
+              "tarPlugin", "tohtml", "tutor", "zipPlugin",
+            },
+          },
+        },
+      })
+      
+      -- Extra fix pentru cache-ul problematic
+      vim.api.nvim_create_autocmd("VimEnter", {
+        callback = function()
+          -- Asigură-te că directoarele există
+          local dirs = {
+            vim.fn.stdpath("data"),
+            vim.fn.stdpath("cache"),
+            vim.fn.stdpath("state"),
+          }
+          
+          for _, dir in ipairs(dirs) do
+            if vim.fn.isdirectory(dir) == 0 then
+              vim.fn.mkdir(dir, "p")
+            end
+          end
+        end,
+      })
     '';
   };
 
