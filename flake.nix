@@ -8,8 +8,6 @@
        inputs.nixpkgs.follows = "nixpkgs";
        };
        pyprland.url = "github:hyprland-community/pyprland";
-    plugin-onedark.url = "github:navarasu/onedark.nvim";
-    plugin-onedark.flake = false;
  };
 
   outputs = { self, nixpkgs, home-manager, pyprland,  ... }@inputs:
