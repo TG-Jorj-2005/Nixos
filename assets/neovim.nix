@@ -265,7 +265,7 @@ let
         checker = { enabled = true },
         performance = {
           cache = {
-            enabled = true,  -- Disable cache complet pentru Nix
+            enabled = false,  -- Disable cache complet pentru Nix
           },
           rtp = {
             disabled_plugins = {
