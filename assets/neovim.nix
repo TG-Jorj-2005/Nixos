@@ -140,7 +140,7 @@ let
             if needs_root "$dir" && [ "$NO_SUDO" = false ]; then
                 sudo mkdir -p "$dir"
             else
-                sudo mkdir -p "$dir"
+                 mkdir -p "$dir"
             fi
         fi
         
@@ -321,9 +321,10 @@ let
   
   # Asigură-te că directoarele există la boot
   home.activation.nvimSetup = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    mkdir -p $HOME/.local/share/nvim/tree-sitter-parsers
-    mkdir -p $HOME/.cache/nvim/{swap,backup,undo}
-    chmod -R 755 $HOME/.local/share/nvim/
-    chmod -R 755 $HOME/.cache/nvim/
+    sudo mkdir -p $HOME/.local/share/nvim/tree-sitter-parsers
+    sudo mkdir -p $HOME/.cache/nvim/{swap,backup,undo}
+    sudo chmod -R 755 $HOME/.local/share/nvim/
+    sudo chmod -R 755 $HOME/.cache/nvim/
+
   '';
 }
