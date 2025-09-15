@@ -224,7 +224,6 @@ let
           { "LazyVim/LazyVim", import = "lazyvim.plugins" },
           
           -- Extras utile
-          { import = "lazyvim.plugins.extras.editor.mini-files" },
           { import = "lazyvim.plugins.extras.lang.nix" },
           { import = "lazyvim.plugins.extras.lang.typescript" },
           { import = "lazyvim.plugins.extras.lang.python" },
@@ -232,7 +231,6 @@ let
           { import = "lazyvim.plugins.extras.lang.ansible" },
           { import = "lazyvim.plugins.extras.lang.r" },
           { import = "lazyvim.plugins.extras.editor.navic" },
-          { import = "lazyvim.plugins.extras.ui.mini-starter" },
           { import = "lazyvim.plugins.extras.editor.harpoon2" },
           { import = "lazyvim.plugins.extras.coding.yanky" },
           { import = "lazyvim.plugins.extras.dap.core" },
