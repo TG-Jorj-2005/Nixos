@@ -28,7 +28,6 @@ fi'';
       echo "📝 Final commit..."
       jrj
       echo "✅ All updates completed!"
-      da
    '';
 
    sec= ''   
