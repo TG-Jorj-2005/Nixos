@@ -233,7 +233,7 @@ wayland = {
    };
  };
 
- home.file."~/.config/hypr/pyprland.toml"= ''
+ home.file.".config/hypr/pyprland.toml".text = ''
    [pyprland]
 # ce plugin-uri activezi
 plugins = ["scratchpads", "special_workspaces"]
