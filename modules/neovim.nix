@@ -4,7 +4,7 @@
  programs.neovim = {
     enable = true;
     
-    with pkgs.Plugins; [
+   plugins =with pkgs.Plugins; [
      
      nvim-cmp
      nvim-lspconfig
