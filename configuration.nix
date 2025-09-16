@@ -86,6 +86,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jorj = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     description = "Tanase George";
     extraGroups = [ "networkmanager" "users" "wheel" "audio" "video" ];
     packages = with pkgs; [];
