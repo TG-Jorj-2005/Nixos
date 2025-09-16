@@ -15,7 +15,6 @@ home.packages = with pkgs;[
  slurp         # Utilitar pentru selectarea unei zone de pe ecran (folosit cu grim)
  waybar
  btop
- alacritty
 
 ];
 wayland = {
@@ -31,7 +30,7 @@ wayland = {
        
 
        #Programer use
-        "$terminal" = "alacritty";
+        "$terminal" = "ghostty";
 	"$fileManager" = "nautilus";
 	"$menu" = "rofi -show drun";
 	
