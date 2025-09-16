@@ -127,6 +127,7 @@
      zathura
      nodejs
      python3
+     ghostty
      nautilus
  ];
    #Hyprland

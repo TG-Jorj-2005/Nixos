@@ -52,7 +52,15 @@ fi'';
     sm = ''sudo chown -R jorj:users *'';
     };
 in
-{
+  {
+    
+programs.bash = {
+ enable = true;
+
+ enableCompletion = true;
+
+  shellAliases = alias;
+  };
 programs.zsh = {
 enable = true;
 
