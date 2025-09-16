@@ -87,7 +87,7 @@ programs.neovim = {
     print("🚀 Plugin setup complete!")
   '';
 };
-   home-packages = with pkgs; [
+   home.packages = with pkgs; [
    ripgrep
    fd
   ];
