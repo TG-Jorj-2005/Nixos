@@ -1,6 +1,5 @@
 {config, lib, pkgs, ...}:
 {
-# Pentru home.nix
 programs.neovim = {
   enable = true;
   plugins = with pkgs.vimPlugins; [
@@ -28,6 +27,13 @@ programs.neovim = {
     vim-nix
   ];
 
+# Adaugă în home.nix (în afara secțiunii programs.neovim):
+home.packages = with pkgs; [
+  ripgrep     # pentru telescope live-grep
+  fd          # pentru telescope find-files (opțional dar recomandat)
+  tree-sitter # pentru nvim-treesitter parser generation
+];
+  
   extraLuaConfig = ''
     -- init.lua pentru Neovim
     
@@ -86,9 +92,6 @@ programs.neovim = {
     
     print("🚀 Plugin setup complete!")
   '';
-};
-   home.packages = with pkgs; [
-   ripgrep
-   fd
-  ];
+  };
+
 } 
