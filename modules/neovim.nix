@@ -1,9 +1,19 @@
 {config, pkgs, lib, ...}:
 {
- programs.neovim = {
+ # Pentru home.nix
+programs.neovim = {
   enable = true;
   plugins = with pkgs.vimPlugins; [
+    # CMP și dependențele lui
     nvim-cmp
+    cmp-nvim-lsp
+    cmp-buffer  
+    cmp-path
+    cmp-cmdline
+    luasnip
+    cmp_luasnip
+    
+    # Restul plugin-urilor
     nvim-lspconfig
     neodev-nvim
     telescope-nvim
@@ -76,6 +86,6 @@
     
     print("🚀 Plugin setup complete!")
   '';
-   
-    };
+};
+
 } 
