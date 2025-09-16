@@ -48,6 +48,7 @@ fi'';
      fi
      done
 '';
+    zs = ''sudo chsh -s /run/current-system/sw/bin/zsh jorj'';
     # Dare permisiuni in home
     sm = ''sudo chown -R jorj:users *'';
     };
