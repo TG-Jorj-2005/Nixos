@@ -15,6 +15,7 @@ home.packages = with pkgs;[
  slurp         # Utilitar pentru selectarea unei zone de pe ecran (folosit cu grim)
  waybar
  btop
+ wezterm
 
 ];
 wayland = {
@@ -30,7 +31,7 @@ wayland = {
        
 
        #Programer use
-        "$terminal" = "ghostty";
+        "$terminal" = "wezterm";
 	"$fileManager" = "nautilus";
 	"$menu" = "rofi -show drun";
 	
