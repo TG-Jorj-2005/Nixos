@@ -5,7 +5,6 @@
     enable = true;
     package = pkgs.ghostty;
     enableZshIntegration = true;  
-    shell = pkgs.zsh;
     settings = {
       # Tema și culori
       theme = "catppuccin-mocha"; # sau "dark", "light", "auto"
