@@ -140,8 +140,22 @@
        enable = true;
        extraPortals = [pkgs.xdg-desktop-portal-gtk ];
          };  
-      };
-   
+       };
+
+ # Activează ZSH la nivel de sistem
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    # Oh My Zsh (opțional)
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" "sudo" "docker" "kubectl" ];
+      theme = "robbyrussell"; # sau alt tema preferată
+    };
+  };
+       
   users.defaultUserShell = pkgs.zsh;
   #Configuratii: 
      programs.git = {
