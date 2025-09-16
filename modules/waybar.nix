@@ -146,15 +146,15 @@
 
    #workspaces {
         background-color: #313244;
-        padding: 0 3px;
-        margin: 0 1px;
-        border-radius: 8px;
+        padding: 0 4px;
+        margin: 0 2px;
+        border-radius: 12px;
       }
 
       #workspaces button {
         background: transparent;
-        margin: 0 1px;
-        font-size: 30px;
+        margin: 0 2px;
+        font-size: 35px;
       }
 
       /* Culori pentru fiecare workspace */
@@ -170,7 +170,7 @@
       #workspaces button:nth-child(10) { color: #6c7086; } /* Gray */
 
       #workspaces button.active {
-        font-size: 30px;
+        font-size: 35px;
       }
 
 
