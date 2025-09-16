@@ -22,7 +22,7 @@
           exec = "playerctl metadata --format '{{title}} - {{artist}}'";
           max-length = 40;
           interval = 10;
-          exec-if = "prep spotify";
+          exec-if = "pgrep spotify";
         };
 
         "hyprland/workspaces" = {
