@@ -78,6 +78,8 @@
   home.sessionVariables = {
      GTK_THEME = "Catppuccin-Mocha";
      TERMINAL = "alacritty";
+     PYPRLAND_CONTROL=/tmp/pyprland.sock pyprland;
+
   };
   
   #Pyprland for wayland
