@@ -75,6 +75,8 @@ programs.neovim = {
       catppuccin = {},
       lualine = {},
     }
+
+    vim.cmd.colorscheme("catppuccin")
     
     -- Aplică setup() pentru fiecare plugin din listă
     for plugin_name, config in pairs(plugin_configs) do
