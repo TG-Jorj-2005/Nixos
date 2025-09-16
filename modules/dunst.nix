@@ -15,7 +15,7 @@
       width = 400
       height = 300
       font = JetBrains Mono 10
-      origin top-right
+      origin =  top-right
       offset= 0x25
       padding = 10
       separator_height = 2
