@@ -13,7 +13,6 @@
       time_format = "%H:%M";
       ignore_newline = true;
       geometry = "300x50-10+10";
-      close_on_click = true;
       sort = "urgency";
       startup_notification = false;
       mouse = true;
