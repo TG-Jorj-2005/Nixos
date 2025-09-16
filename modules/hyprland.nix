@@ -48,7 +48,6 @@ wayland = {
 	#Auto-Start
 	exec-once = [
   "lxqt-policykit-agent"
-  "pypr daemon"
 	"swww-daemon"
 	"waybar"
 	"alacritty -t btop -e btop"
