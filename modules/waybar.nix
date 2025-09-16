@@ -130,7 +130,7 @@
     style = ''
       * {
         border: none;
-        border-radius: 8px;
+        border-radius: 12px;
         font-family: "JetBrainsMono Nerd Font";
         font-size: 14px;
         min-height: 0;
@@ -219,7 +219,6 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       }
 
-      /* Spotify styling cu logo și animații */
       #custom-spotify {
         padding: 0 10px;
         margin: 0 3px;
@@ -236,7 +235,6 @@
         box-shadow: 0 6px 16px rgba(29, 185, 84, 0.4);
       }
 
-      /* Animație subtilă pentru când muzica se redă */
       @keyframes spotify-pulse {
         from { 
           opacity: 0.9;
@@ -248,7 +246,6 @@
         }
       }
 
-      /* Când nu se redă muzica */
       #custom-spotify.paused {
         background: linear-gradient(135deg, #535353 0%, #6c6c6c 100%);
         color: #cccccc;
