@@ -130,6 +130,7 @@
      python3
      nautilus
      playerctl
+     font-awesome
               
     zsh
     zsh-completions
