@@ -195,12 +195,23 @@
 
       }
 
-      #custom-spotify {
+     #custom-spotify {
         padding: 0 8px;
         margin: 0 3px;
-        background-color: #00ff00; 
+        background-color: #1db954; /* Spotify green */
         border-radius: 8px;
         color: #000000;
+        animation: spotify-pulse 2s ease-in-out infinite alternate;
+      }
+
+      #custom-spotify:hover {
+        background-color: #1ed760;
+        box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+      }
+
+      @keyframes spotify-pulse {
+        from { opacity: 0.8; }
+        to { opacity: 1.0; }
       }
     '';  
   };
