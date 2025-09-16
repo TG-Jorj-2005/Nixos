@@ -21,33 +21,6 @@
     size = 16;
   };
 
-  gtk = {
-    enable = true;
-
-   theme = {
-      package = pkgs.catppuccin-gtk;
-      name = "Catppuccin-Mocha";
-    };
-
-    iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
-    };
-
-    font = {
-      name = "Sans";
-      size = 12;
-    };
-  };
-
-  qt={
-  enable = true;
-  platformTheme.name = "gtk";
-  style = {
-    name = "gtk2"; 
-   };
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   # Home Manager needs a bit of information about you and the paths it should

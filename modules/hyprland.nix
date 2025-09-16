@@ -31,7 +31,7 @@ wayland = {
        
 
        #Programer use
-        "$terminal" = "kitty";
+        "$terminal" = "terminal";
 	"$fileManager" = "nautilus";
 	"$menu" = "rofi -show drun";
 	
