@@ -146,8 +146,8 @@
 
    #workspaces {
         background-color: #313244;
-        padding: 0 5px;
-        margin: 0 3px;
+        padding: 0 3px;
+        margin: 0 1px;
         border-radius: 8px;
       }
 
