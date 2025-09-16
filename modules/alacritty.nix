@@ -42,16 +42,6 @@
       gtk-single-instance = false;
     };
     
-    # Keybindings personalizate (opțional)
-    keybindings = {
-      "ctrl+shift+c" = "copy_to_clipboard";
-      "ctrl+shift+v" = "paste_from_clipboard";
-      "ctrl+shift+t" = "new_tab";
-      "ctrl+shift+w" = "close_surface";
-      "ctrl+shift+n" = "new_window";
-    };
-  };
-
   };
 }
 
