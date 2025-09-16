@@ -25,7 +25,6 @@
           on-click-right = "playerctl next";
           on-scroll-up = "playerctl previous";
           on-scroll-down = "playerctl next";
-          class-name = "custom-spotify";
           exec = "playerctl metadata xesam:title";
           interval = 5;
           exec-if = "pgrep spotify";
