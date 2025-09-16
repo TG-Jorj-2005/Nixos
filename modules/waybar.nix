@@ -152,9 +152,11 @@
       }
 
       #workspaces button {
-        background: transparent;
+       background: transparent;
         margin: 0 2px;
         font-size: 35px;
+        transition: none;
+        color: #6c7086;
       }
 
          #workspaces button:nth-child(1) { color: #f38ba8; } /* Red */
