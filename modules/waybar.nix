@@ -131,16 +131,16 @@
         font-size: 14px;
         min-height: 0;
       }
-      #workspaces button[data-id="1"] { color: #f38ba8; } /* Red */
-      #workspaces button[data-id="2"] { color: #fab387; } /* Orange */
-      #workspaces button[data-id="3"] { color: #f9e2af; } /* Yellow */
-      #workspaces button[data-id="4"] { color: #a6e3a1; } /* Green */
-      #workspaces button[data-id="5"] { color: #74c7ec; } /* Blue */
-      #workspaces button[data-id="6"] { color: #cba6f7; } /* Purple */
-      #workspaces button[data-id="7"] { color: #f5c2e7; } /* Pink */
-      #workspaces button[data-id="8"] { color: #94e2d5; } /* Cyan */
-      #workspaces button[data-id="9"] { color: #cdd6f4; } /* White */
-      #workspaces button[data-id="10"] { color: #6c7086; } /* Gray */
+     #workspaces button.ws1 { color: #f38ba8; } /* Red */
+      #workspaces button.ws2 { color: #fab387; } /* Orange */
+      #workspaces button.ws3 { color: #f9e2af; } /* Yellow */
+      #workspaces button.ws4 { color: #a6e3a1; } /* Green */
+      #workspaces button.ws5 { color: #74c7ec; } /* Blue */
+      #workspaces button.ws6 { color: #cba6f7; } /* Purple */
+      #workspaces button.ws7 { color: #f5c2e7; } /* Pink */
+      #workspaces button.ws8 { color: #94e2d5; } /* Cyan */
+      #workspaces button.ws9 { color: #cdd6f4; } /* White */
+      #workspaces button.ws10 { color: #6c7086; } /* Gray */
 
       window#waybar {
         background-color: transparent; 
