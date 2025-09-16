@@ -38,6 +38,7 @@ fi'';
       echo "🏠 Updating home-manager..."
       hmn
       '';
+    # Reset lazy.nvim plugins dar nu imi mai trebuie
     da = ''
     cd /home/jorj/.local/share/nvim/lazy
     for d in */; do
@@ -47,6 +48,7 @@ fi'';
      fi
      done
 '';
+    # Dare permisiuni in home
     sm = ''sudo chown -R jorj:users *'';
     };
 in
@@ -67,13 +69,6 @@ initContent = ''
       nitch
     fi
     
-    # Restart tmux pentru a aplica configurația
-   if command -v tmux &> /dev/null; then
-    if ! tmux has-session 2>/dev/null; then
-        tmux kill-server 2>/dev/null || true
-    fi
-   fi
-
     export EDITOR="code"
     export TERMINAL="alacritty"
    '';
