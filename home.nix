@@ -83,22 +83,14 @@
   
   #Pyprland for wayland
 systemd.user.services.pyprland = {
-  Unit = {
-    Description = "Pyprland Daemon";
-    # important: rulează numai după ce sesiunea Hyprland e activă
-    After = [ "hyprland-session.target" ];
-    PartOf = [ "hyprland-session.target" ];
-  };
+  Unit.Description = "Pyprland Daemon (delayed)";
   Service = {
+    ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";  # așteaptă 5 secunde
     ExecStart = "${pkgs.pyprland}/bin/pypr daemon";
     Restart = "on-failure";
-    RestartSec = 2;
-    # variabila necesară pentru a găsi socketul hyprctl
     Environment = "HYPRLAND_INSTANCE_SIGNATURE=%t";
   };
-  Install = {
-    WantedBy = [ "hyprland-session.target" ];
-  };
+  Install.WantedBy = [ "graphical-session.target" ];
 };
 
   programs.home-manager.enable = true;
