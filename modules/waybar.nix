@@ -199,7 +199,6 @@
         background-color: #313244; 
         border-radius: 8px;
         color: #cdd6f4; 
-        text-overflow: ellipsis;
         white-space: nowrap;
       }
     '';
