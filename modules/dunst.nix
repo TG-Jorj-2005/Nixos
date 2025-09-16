@@ -7,7 +7,7 @@
     iconTheme = { 
       name =  "Papirus-Dark";
       package = pkgs.papirus-icon-theme;             
-      size = 18;
+      size = "16x16";
            };
     configFile = ''
       [global]
