@@ -140,6 +140,7 @@
         background-color: transparent; 
         border-radius: 12px;
         color: #cdd6f4; 
+        transition-property: background-color;
         transition-duration: 0.5s;
       }
 
@@ -151,7 +152,6 @@
       }
 
       #workspaces button {
-        background: transparent;
         margin: 0 2px;
         font-size: 35px;
       }
