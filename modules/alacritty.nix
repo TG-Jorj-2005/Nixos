@@ -22,7 +22,6 @@
       
       # Cursor
       cursor-style = "block"; # sau "bar", "underline"
-      cursor-blink = true;
       
       # Scrolling
       scrollback-limit = 10000;
