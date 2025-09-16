@@ -123,6 +123,7 @@
      lxqt.lxqt-policykit
      neovim
      dunst
+     brightnessctl
      zathura
      nodejs
     python3

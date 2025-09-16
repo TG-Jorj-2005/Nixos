@@ -346,6 +346,19 @@ programs.neovim = {
     vim.keymap.set("n", "<leader>fe", ":Neotree toggle left<CR>", { desc = "Explorer NeoTree (root dir)" })
     vim.keymap.set("n", "<leader>be", ":Neotree toggle show buffers right<CR>", { desc = "Buffer explorer" })
     vim.keymap.set("n", "<leader>ge", ":Neotree toggle show git_status right<CR>", { desc = "Git explorer" })
+
+    -- Adaugă în extraLuaConfig pentru keybindings de terminal
+   vim.keymap.set('n', '<leader>tt', ':terminal<CR>', { desc = 'Open terminal' })
+   vim.keymap.set('n', '<leader>ts', ':split | terminal<CR>', { desc = 'Terminal split horizontal' })
+   vim.keymap.set('n', '<leader>tv', ':vsplit | terminal<CR>', { desc = 'Terminal split vertical' })
+   vim.keymap.set('n', '<leader>tf', ':tabnew | terminal<CR>', { desc = 'Terminal in new tab' })
+
+   -- Pentru a ieși din terminal mode
+   vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+   vim.keymap.set('t', '<C-h>', '<C-\\><C-n><C-w>h', { desc = 'Move to left window' })
+   vim.keymap.set('t', '<C-j>', '<C-\\><C-n><C-w>j', { desc = 'Move to bottom window' })
+   vim.keymap.set('t', '<C-k>', '<C-\\><C-n><C-w>k', { desc = 'Move to top window' })
+   vim.keymap.set('t', '<C-l>', '<C-\\><C-n><C-w>l', { desc = 'Move to right window' })
         
     -- Aplică setup() pentru fiecare plugin din listă
     for plugin_name, config in pairs(plugin_configs) do
