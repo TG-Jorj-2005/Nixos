@@ -25,7 +25,7 @@
           on-click-right = "playerctl next";
           on-scroll-up = "playerctl previous";
           on-scroll-down = "playerctl next";
-          exec = "playerctl metadata xesam:artist 2>/dev/null && echo ' - ' && playerctl metadata xesam:title 2>/dev/null | tr -d '\\n' || echo 'No music'";
+          exec = "/home/jorj/.config/waybar/spotify.sh";
           interval = 5;
           exec-if = "pgrep spotify";
         };
