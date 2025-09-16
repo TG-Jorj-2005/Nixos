@@ -13,11 +13,11 @@
         margin-left = 10;
         margin-right = 10;
         
-        modules-left = [ "hyprland/workspaces" "custom/spotify" ];
+        modules-left = [ "hyprland/workspaces" "custom/Spotify" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [ "network" "pulseaudio" "battery" "clock" ];
         
-        "custom/spotify" = {
+        "custom/Spotify" = {
           format = " {title} - {artist}";
           exec = "playerctl metadata --format '{{title}} - {{artist}}'";
           max-length = 20;
@@ -195,7 +195,7 @@
 
       }
 
-      #custom-spotify {
+      #custom-Spotify {
         padding: 0 8px;
         margin: 0 3px;
         background-color: #00ff00; 
