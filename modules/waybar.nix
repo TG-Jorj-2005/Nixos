@@ -20,8 +20,8 @@
         "custom/spotify" = {
           format = " {title} - {artist}";
           exec = "playerctl metadata --format '{{title}} - {{artist}}'";
-          max-length = 40;
-          interval = 10;
+          max-length = 20;
+          interval = 5;
           exec-if = "pgrep spotify";
         };
 
