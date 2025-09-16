@@ -133,7 +133,6 @@
    programs.hyprland = {
      enable = true;
      xwayland.enable = true;
-     systemd.enable = true;
       };
    xdg = {
      portal = {
