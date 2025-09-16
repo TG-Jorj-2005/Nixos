@@ -136,7 +136,6 @@
     zsh-syntax-highlighting
     fzf          # fuzzy finder
     bat          # cat cu syntax highlighting  
-    exa          # ls modern
     ripgrep
  ];
    #Hyprland
