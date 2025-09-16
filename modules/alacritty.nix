@@ -33,20 +33,20 @@
       };
       
       # Font
-      font = {
+       font = {
         normal = {
-          family = "JetBrains Mono";
+          family = "FiraCode Nerd Font";
           style = "Regular";
         };
         bold = {
-          family = "JetBrains Mono";
+          family = "FiraCode Nerd Font";
           style = "Bold";
         };
         italic = {
-          family = "JetBrains Mono";
+          family = "FiraCode Nerd Font";
           style = "Italic";
         };
-        size = 12.0;
+        size = 13.0;
       };
       
       # Cursor
