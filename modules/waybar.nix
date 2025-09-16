@@ -20,13 +20,9 @@
         "custom/spotify" = {
           format = "  {}";
           max-length = 40;
-          # Comandă care funcționează - testează în terminal mai întâi
           exec = "playerctl metadata title 2>/dev/null || echo 'No music playing'";
-          # Sau pentru title + artist (decomentează dacă prima nu merge):
-          # exec = "playerctl metadata --format '{{ title }} - {{ artist }}' 2>/dev/null || echo 'No music playing'";
-          
           exec-if = "pgrep spotify";
-          interval = 5;
+          interval = 2;
           
           # Controale click
           on-click = "playerctl play-pause";
