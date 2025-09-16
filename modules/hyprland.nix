@@ -189,6 +189,14 @@ wayland = {
         "SUPER, 8, workspace, 8"
         "SUPER, 9, workspace, 9"
         "SUPER, 0, workspace, 10"
+
+        #Pyprland Scratchpads
+        "SUPER, T, exec, pypr toggle term"
+        "SUPER, Y, exec, pypr toggle spotify"
+        "SUPER, U, exec, pypr toggle discord"
+
+        "SUPER, C, exec, pypr workspace code"
+        "SUPER, K, exec, pypr workspace music"
         
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "SUPER SHIFT, 1, movetoworkspace, 1"
