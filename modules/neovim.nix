@@ -1,4 +1,4 @@
-{ pkgs, lib, ...}:
+{config, pkgs, lib, ...}:
 {
  programs.neovim = {
     enable = true;
@@ -28,6 +28,27 @@
     defaultEditor = true;
     
     extraLuaConfig = ''
+    -- init.lua pentru Neovim
+    
+    -- Configurații generale
+    vim.opt.number = true
+    vim.opt.relativenumber = true
+    vim.opt.expandtab = true
+    vim.opt.shiftwidth = 2
+    vim.opt.tabstop = 2
+    vim.opt.smartindent = true
+    vim.opt.wrap = false
+    vim.opt.swapfile = false
+    vim.opt.backup = false
+    vim.opt.hlsearch = false
+    vim.opt.incsearch = true
+    vim.opt.termguicolors = true
+    vim.opt.scrolloff = 8
+    vim.opt.signcolumn = "yes"
+    vim.opt.updatetime = 50
+    
+    -- Leader key
+    vim.g.mapleader = " "
     -- Funcție helper pentru setup sigur
     local function safe_setup(plugin_name, config)
       config = config or {}
