@@ -220,7 +220,6 @@
 
       #custom-spotify:hover {
         background: linear-gradient(135deg, #1ed760 0%, #1db954 100%);
-        transform: translateY(-1px);
         box-shadow: 0 6px 16px rgba(29, 185, 84, 0.4);
       }
 
