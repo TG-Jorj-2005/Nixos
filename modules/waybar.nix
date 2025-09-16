@@ -1,11 +1,5 @@
 {config, lib, pkgs, ...}:
 {
-  # Asigură-te că ai playerctl instalat
-  environment.systemPackages = with pkgs; [
-    playerctl
-    spotify
-  ];
-
   programs.waybar = { 
     enable = true;
     settings = {
