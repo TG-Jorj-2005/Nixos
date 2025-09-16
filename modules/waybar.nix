@@ -1,5 +1,11 @@
 {config, lib, pkgs, ...}:
 {
+  # Asigură-te că ai playerctl instalat
+  environment.systemPackages = with pkgs; [
+    playerctl
+    spotify
+  ];
+
   programs.waybar = { 
     enable = true;
     settings = {
@@ -18,14 +24,25 @@
         modules-right = [ "network" "pulseaudio" "battery" "clock" ];
         
         "custom/spotify" = {
-          format = " {title} - {artist}";
+          format = "  {}";
           max-length = 40;
+          # Comandă care funcționează - testează în terminal mai întâi
+          exec = "playerctl metadata title 2>/dev/null || echo 'No music playing'";
+          # Sau pentru title + artist (decomentează dacă prima nu merge):
+          # exec = "playerctl metadata --format '{{ title }} - {{ artist }}' 2>/dev/null || echo 'No music playing'";
+          
+          exec-if = "pgrep spotify";
+          interval = 5;
+          
+          # Controale click
           on-click = "playerctl play-pause";
           on-click-right = "playerctl next";
           on-scroll-up = "playerctl previous";
           on-scroll-down = "playerctl next";
-          interval = 5;
-
+          
+          # Tooltip pentru info suplimentare
+          tooltip = true;
+          tooltip-format = "  Now playing: {}";
         };
 
         "hyprland/workspaces" = {
@@ -43,10 +60,9 @@
             "8" = "📺";  # Video/Streaming
             "9" = "⚙️";  # Settings/System
             "10" = "📦"; # Miscellaneous
-              };
+          };
         };
         
-                
         "hyprland/window" = {
           format = "{}";
           max-length = 50;
@@ -54,15 +70,15 @@
         };
         
         "network" = {
-          format-wifi = " 📶 {essid} ({signalStrength}%)";
-          format-ethernet = " 🌐 {ipaddr}";
-          format-disconnected = " 🔗 Disconnected";
-          tooltip-format = " 📊 {ifname}: {ipaddr}/{cidr}";
+          format-wifi = "📶 {essid} ({signalStrength}%)";
+          format-ethernet = "🌐 {ipaddr}";
+          format-disconnected = "🔗 Disconnected";
+          tooltip-format = "📊 {ifname}: {ipaddr}/{cidr}";
         };
         
         "pulseaudio" = {
           format = "{icon} {volume}%";
-         format-bluetooth = "🎧 {icon} {volume}%";
+          format-bluetooth = "🎧 {icon} {volume}%";
           format-bluetooth-muted = "🎧 🔇 Muted";
           format-muted = "🔇 Muted";
           format-source = "🎤 {volume}%";
@@ -76,10 +92,10 @@
             car = "🚗";
             default = ["🔈" "🔉" "🔊"];
           };
-          swap-icon-label = true;
+          # swap-icon-label = true;  # Comentat - cauza warning
           on-click = "pavucontrol";
           on-click-right = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
-	  };
+        };
         
         "battery" = {
           interval = 10;
@@ -88,16 +104,16 @@
             critical = 15;
           };
           format = "{icon} {capacity}%";
-          format-charging = " ⚡ {capacity}%";
-          format-plugged = " 🔌 {capacity}%";
+          format-charging = "⚡ {capacity}%";
+          format-plugged = "🔌 {capacity}%";
           format-alt = "{icon} {time}";
-          format-icons =["🪫" "🔋" "🔋" "🔋" "🔋"];
-	  tooltip-format = "{timeTo}, {capacity}%";
+          format-icons = ["🪫" "🔋" "🔋" "🔋" "🔋"];
+          tooltip-format = "{timeTo}, {capacity}%";
         };
         
         "clock" = {
-          format = " 🕐 {:%H:%M}";
-          format-alt = " 📅 {:%Y-%m-%d %H:%M:%S}";
+          format = "🕐 {:%H:%M}";
+          format-alt = "📅 {:%Y-%m-%d %H:%M:%S}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           calendar = {
             mode = "year";
@@ -117,7 +133,7 @@
       };
     };
     
-     style = ''
+    style = ''
       * {
         border: none;
         border-radius: 8px;
@@ -151,7 +167,6 @@
         color: #89b4fa;
       }
 
-
       #window,
       #network,
       #pulseaudio,
@@ -163,6 +178,7 @@
         border-radius: 8px;
         color: #cdd6f4; 
       }
+
       #network {
         color: #89b4fa; 
       }
@@ -186,42 +202,52 @@
       }
 
       #clock {
-        color: #74c7ec; /* Catppuccin Mocha sapphire */
+        color: #74c7ec;
       }
 
-      
       #network:hover,
       #pulseaudio:hover,
       #battery:hover,
       #clock:hover {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-
       }
 
-     #custom-spotify {
-        padding: 0 8px;
+      /* Spotify styling cu logo și animații */
+      #custom-spotify {
+        padding: 0 10px;
         margin: 0 3px;
-        background-color: #1db954; /* Spotify green */
-        border-radius: 8px;
-        color: rgba(0,0,0,0);
-        animation: spotify-pulse 2s ease-in-out infinite alternate;
+        background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
+        border-radius: 10px;
+        color: #000000;
+        font-weight: bold;
+        animation: spotify-pulse 3s ease-in-out infinite alternate;
+        transition: all 0.3s ease;
       }
 
       #custom-spotify:hover {
-        background-color: #1ed760;
-        box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+        background: linear-gradient(135deg, #1ed760 0%, #1db954 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(29, 185, 84, 0.4);
       }
 
+      /* Animație subtilă pentru când muzica se redă */
       @keyframes spotify-pulse {
-        from { opacity: 0.8; }
-        to { opacity: 1.0; }
+        from { 
+          opacity: 0.9;
+          box-shadow: 0 2px 8px rgba(29, 185, 84, 0.2);
+        }
+        to { 
+          opacity: 1.0;
+          box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+        }
+      }
+
+      /* Când nu se redă muzica */
+      #custom-spotify.paused {
+        background: linear-gradient(135deg, #535353 0%, #6c6c6c 100%);
+        color: #cccccc;
+        animation: none;
       }
     '';  
   };
-    
 }
-
-
-
-
-
