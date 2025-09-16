@@ -127,15 +127,7 @@
         ];
       };
       
-      # Key bindings
-      key_bindings = [
-        { key = "V"; mods = "Control|Shift"; action = "Paste"; }
-        { key = "C"; mods = "Control|Shift"; action = "Copy"; }
-        { key = "T"; mods = "Control|Shift"; action = "CreateNewWindow"; }
-        { key = "Plus"; mods = "Control"; action = "IncreaseFontSize"; }
-        { key = "Minus"; mods = "Control"; action = "DecreaseFontSize"; }
-        { key = "Equal"; mods = "Control"; action = "ResetFontSize"; }
-      ];
+      # Key bindings - folosim keybindings-urile default ale Alacritty
     };
   };
 }
