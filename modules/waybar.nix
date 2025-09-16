@@ -196,9 +196,9 @@
       #custom-spotify {
         padding: 0 8px;
         margin: 0 3px;
-        background-color: #313244; 
+        background-color: #00ff00; 
         border-radius: 8px;
-        color: #cdd6f4; 
+        color: #000000; 
       }
     '';
   };
