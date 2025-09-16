@@ -18,9 +18,15 @@
         modules-right = [ "network" "pulseaudio" "battery" "clock" ];
         
         "custom/spotify" = {
-          format = "{title} - {artist}";
-          exec = "playerctl metadata --format '{{title}} - {{artist}}'";
+          format = " {title} - {artist}";
           max-length = 20;
+          tooltip-format = " {title} - {artist}\n{album}";
+          on-click = "playerctl play-pause";
+          on-click-right = "playerctl next";
+          on-scroll-up = "playerctl previous";
+          on-scroll-down = "playerctl next";
+          class-name = "custom-spotify";
+          exec = "playerctl metadata xesam:title";
           interval = 5;
           exec-if = "pgrep spotify";
         };
