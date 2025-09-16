@@ -1,49 +1,57 @@
 { config, pkgs, ... }:
 
 {
-  # Enable Alacritty terminal
-  programs.alacritty = {
+  programs.ghostty = {
     enable = true;
-    package = pkgs.alacritty;
+    package = pkgs.ghostty;
+    enableZshIntegration = true;  
+    shell = pkgs.zsh;
+    settings = {
+      # Tema și culori
+      theme = "catppuccin-mocha"; # sau "dark", "light", "auto"
+      background-opacity = 0.9;
+      
+      # Font
+      font-family = "JetBrains Mono";
+      font-size = 12;
+      font-style = "normal";
+      
+      # Comportament fereastră
+      window-decoration = true;
+      window-padding-x = 8;
+      window-padding-y = 8;
+      
+      # Cursor
+      cursor-style = "block"; # sau "bar", "underline"
+      cursor-blink = true;
+      
+      # Scrolling
+      scrollback-limit = 10000;
+      
+      # Clipboard
+      copy-on-select = false;
+      
+      # Shell integration
+      shell-integration-features = "cursor,sudo,title";
+      
+      # Mouse
+      mouse-hide-while-typing = true;
+      
+      # Diverse
+      confirm-close-surface = false;
+      gtk-single-instance = false;
+    };
+    
+    # Keybindings personalizate (opțional)
+    keybindings = {
+      "ctrl+shift+c" = "copy_to_clipboard";
+      "ctrl+shift+v" = "paste_from_clipboard";
+      "ctrl+shift+t" = "new_tab";
+      "ctrl+shift+w" = "close_surface";
+      "ctrl+shift+n" = "new_window";
+    };
   };
 
-  # Configure the Alacritty config file in TOML
-  home.file.".config/alacritty/alacritty.toml".text = ''
-    [window]
-    padding = { x = 10, y = 10 }
-    dynamic_title = true
-    decorations = "Full"
-    startup_mode = "Windowed"
-    title = "Alacritty"
-
-    [font]
-    [font.normal]
-    family = "JetBrains Mono"
-    style = "Regular"
-
-    [font.bold]
-    family = "JetBrains Mono"
-    style = "Bold"
-
-    [font.italic]
-    family = "JetBrains Mono"
-    style = "Italic"
-
-    size = 12.0
-
-    [font.offset]
-    x = 0
-    y = 0
-
-    [font.glyph_offset]
-    x = 0
-    y = 0
-
-    use_thin_strokes = false
-
-    [shell]
-    program = "/bin/zsh"
-    args = ["-l"]
-  '';
+  };
 }
 
