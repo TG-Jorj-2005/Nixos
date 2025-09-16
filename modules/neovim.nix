@@ -1,4 +1,6 @@
- # Pentru home.nix
+{config, lib, pkgs, ...}:
+{
+# Pentru home.nix
 programs.neovim = {
   enable = true;
   plugins = with pkgs.vimPlugins; [
@@ -85,8 +87,7 @@ programs.neovim = {
     print("🚀 Plugin setup complete!")
   '';
 };
-
-  home-packages = with pkgs; [
+   home-packages = with pkgs; [
    ripgrep
    fd
   ];
