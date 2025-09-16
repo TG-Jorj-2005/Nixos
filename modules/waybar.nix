@@ -26,7 +26,6 @@
           on-scroll-up = "playerctl previous";
           on-scroll-down = "playerctl next";
           interval = 5;
-          exec = "/run/current-system/sw/bin/bash -c 'playerctl metadata --format \"{{title}} - {{artist}}\"'";
 
         };
 
