@@ -155,7 +155,6 @@
         background: transparent;
         margin: 0 3px;
         font-size: 16px;
-        transition: none;
       }
 
       /* Culori pentru fiecare workspace */
@@ -171,7 +170,7 @@
       #workspaces button:nth-child(10) { color: #6c7086; } /* Gray */
 
       #workspaces button.active {
-        font-size: 18px;
+        font-size: 24px;
       }
 
 
