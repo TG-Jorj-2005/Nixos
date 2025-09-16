@@ -13,9 +13,17 @@
         margin-left = 10;
         margin-right = 10;
         
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [ "hyprland/workspaces" "custom/spotify" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [ "network" "pulseaudio" "battery" "clock" ];
+        
+        "custom/spotify" = {
+          format = " {title} - {artist}";
+          exec = "playerctl metadata --format '{{title}} - {{artist}}'";
+          max-length = 40;
+          interval = 10;
+          exec-if = "prep spotify";
+        };
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -183,6 +191,18 @@
       #battery:hover,
       #clock:hover {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+      }
+      #spotify {
+        padding: 0 8px;
+        margin: 0 3px;
+        background-color: #313244; 
+        border-radius: 8px;
+        color: #cdd6f4; 
+        max-width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     '';
   };
