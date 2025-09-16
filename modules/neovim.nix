@@ -348,7 +348,7 @@ programs.neovim = {
     vim.keymap.set("n", "<leader>ge", ":Neotree toggle show git_status right<CR>", { desc = "Git explorer" })
 
     -- Adaugă în extraLuaConfig pentru keybindings de terminal
-   vim.keymap.set('n', '<leader>tt', ':terminal<CR>', { desc = 'Open terminal' })
+   vim.keymap.set('n', '<leader>tt', ':terminal<CR>', { desc = 'Open allacritty' })
    vim.keymap.set('n', '<leader>ts', ':split | terminal<CR>', { desc = 'Terminal split horizontal' })
    vim.keymap.set('n', '<leader>tv', ':vsplit | terminal<CR>', { desc = 'Terminal split vertical' })
    vim.keymap.set('n', '<leader>tf', ':tabnew | terminal<CR>', { desc = 'Terminal in new tab' })

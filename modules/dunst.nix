@@ -1,7 +1,7 @@
 {config, lib, pkgs, ...}:
 
 {
-  programs.dunst = {
+  services.dunst = {
     enable = true;
     package = pkgs.dunst;
     settings = {
