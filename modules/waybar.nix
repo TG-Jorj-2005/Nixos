@@ -27,7 +27,6 @@
           on-scroll-down = "playerctl next";
           interval = 5;
           exec = "echo test";
-          exec-if = "pgrep spotify";
         };
 
         "hyprland/workspaces" = {
