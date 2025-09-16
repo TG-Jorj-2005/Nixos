@@ -15,6 +15,9 @@ home.packages = with pkgs;[
  slurp         # Utilitar pentru selectarea unei zone de pe ecran (folosit cu grim)
  waybar
  btop
+ neofetch
+ nerdfetch
+
  
 
 ];
