@@ -4,7 +4,11 @@
   services.dunst = {
     enable = true;
     package = pkgs.dunst;
-    iconTheme = { name =  "Papirus-Dark"; };
+    iconTheme = { 
+      name =  "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;             
+      size = 18;
+           };
     configFile = ''
       [global]
       follow = mouse
