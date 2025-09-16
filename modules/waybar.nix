@@ -18,7 +18,7 @@
         modules-right = [ "network" "pulseaudio" "battery" "clock" ];
         
         "custom/spotify" = {
-          format = " {title} - {artist}";
+          format = "{title} - {artist}";
           exec = "playerctl metadata --format '{{title}} - {{artist}}'";
           max-length = 20;
           interval = 5;
