@@ -127,7 +127,6 @@
      zathura
      nodejs
      python3
-     ghostty
      nautilus
 
     zsh
