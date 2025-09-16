@@ -157,7 +157,6 @@
         font-size: 35px;
       }
 
-      /* Culori pentru fiecare workspace */
          #workspaces button:nth-child(1) { color: #f38ba8; } /* Red */
       #workspaces button:nth-child(2) { color: #fab387; } /* Orange */
       #workspaces button:nth-child(3) { color: #f9e2af; } /* Yellow */
@@ -170,7 +169,9 @@
       #workspaces button:nth-child(10) { color: #6c7086; } /* Gray */
 
       #workspaces button.active {
-        font-size: 35px;
+        font-size: 35px; 
+        text-shadow: 0 0 5px currentColor;
+
       }
 
 
