@@ -1,16 +1,17 @@
 # alacritty.nix
 { config, pkgs, ... }:
-
 {
   programs.alacritty = {
     enable = true;
     package = pkgs.alacritty;
     
     settings = {
-      # Shell
-      shell = {
-        program = "${pkgs.zsh}/bin/zsh";
-        args = [ "--login" ];
+      # Terminal configuration (updated shell location)
+      terminal = {
+        shell = {
+          program = "${pkgs.zsh}/bin/zsh";
+          args = [ "--login" ];
+        };
       };
       
       # Fereastră
