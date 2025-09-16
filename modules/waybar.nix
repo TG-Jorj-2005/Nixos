@@ -144,34 +144,40 @@
         transition-duration: 0.5s;
       }
 
- #workspaces {
-  background-color: #313244;
-  padding: 2px 6px;
-  border-radius: 8px;
-}
+  #workspaces {
+        background-color: transparent; /* Am eliminat fundalul containerului */
+        padding: 0; /* Am eliminat spațiul interior */
+        margin: 0 3px; /* Am adăugat o mică margine pentru aliniere cu celelalte module */
+      }
 
-#workspaces button {
-  background: transparent;
-  margin: 0 2px;
-  font-size: 16px;
-  color: #6c7086; /* fallback */
-}
+      #workspaces button {
+        background: transparent;
+        margin: 0 3px; /* Spațiu între buline */
+        font-size: 16px;
+        color: #6c7086; /* Culoare pentru bulinele inactive (gri) */
+        transition: all 0.2s ease-in-out;
+      }
 
-#workspaces button.workspace-1 { color: #f38ba8; } /* Red */
-#workspaces button.workspace-2 { color: #fab387; } /* Orange */
-#workspaces button.workspace-3 { color: #f9e2af; } /* Yellow */
-#workspaces button.workspace-4 { color: #a6e3a1; } /* Green */
-#workspaces button.workspace-5 { color: #74c7ec; } /* Blue */
-#workspaces button.workspace-6 { color: #cba6f7; } /* Purple */
-#workspaces button.workspace-7 { color: #f5c2e7; } /* Pink */
-#workspaces button.workspace-8 { color: #94e2d5; } /* Cyan */
-#workspaces button.workspace-9 { color: #cdd6f4; } /* White */
-#workspaces button.workspace-10 { color: #6c7086; } /* Gray */
+      /* Culorile pentru fiecare bulină în parte (activă sau inactivă) */
+      #workspaces button.workspace-1 { color: #f38ba8; } /* Red */
+      #workspaces button.workspace-2 { color: #fab387; } /* Orange */
+      #workspaces button.workspace-3 { color: #f9e2af; } /* Yellow */
+      #workspaces button.workspace-4 { color: #a6e3a1; } /* Green */
+      #workspaces button.workspace-5 { color: #74c7ec; } /* Blue */
+      #workspaces button.workspace-6 { color: #cba6f7; } /* Purple */
+      #workspaces button.workspace-7 { color: #f5c2e7; } /* Pink */
+      #workspaces button.workspace-8 { color: #94e2d5; } /* Cyan */
+      #workspaces button.workspace-9 { color: #cdd6f4; } /* White */
+      #workspaces button.workspace-10 { color: #6c7086; } /* Gray */
 
-#workspaces button.active {
-  background-color: currentColor;
-  color: #1e1e2e;
-}
+      #workspaces button.active {
+        /* Am eliminat `background-color` și `color` de aici */
+        /* Bulina activă va prelua culoarea specifică de mai sus și nu va avea fundal */
+        font-size: 18px; /* Opțional: mărim puțin bulina activă pentru a ieși în evidență *
+    
+      }
+
+
       #window,
       #network,
       #pulseaudio,
