@@ -173,8 +173,7 @@
       #workspaces button.active {
         /* Am eliminat `background-color` și `color` de aici */
         /* Bulina activă va prelua culoarea specifică de mai sus și nu va avea fundal */
-        font-size: 18px; /* Opțional: mărim puțin bulina activă pentru a ieși în evidență *
-    
+        font-size: 18px; /* Opțional: mărim puțin bulina activă pentru a ieși în evidență */
       }
 
 
