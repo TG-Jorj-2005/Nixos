@@ -2,7 +2,7 @@
 {
 home.packages = with pkgs;[
  starship           # Prompt pentru terminal rapid și personalizabil
-rofi
+ rofi
  nitch              # System information tool minimal (neofetch alternativ)
  wlr-randr          # Utilitar pentru configurarea monitoarelor în Wayland
  swww               # Wallpaper daemon pentru Wayland - schimbă fundalul desktop-ului
