@@ -27,7 +27,10 @@ programs.neovim = {
     copilot-vim
     vim-nix
   ];
-  
+  home-packages = with pkgs; [
+   ripgrep
+   fd
+  ];
   extraLuaConfig = ''
     -- init.lua pentru Neovim
     
