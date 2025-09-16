@@ -1,5 +1,3 @@
-{config, pkgs, lib, ...}:
-{
  # Pentru home.nix
 programs.neovim = {
   enable = true;
@@ -27,10 +25,7 @@ programs.neovim = {
     copilot-vim
     vim-nix
   ];
-  home-packages = with pkgs; [
-   ripgrep
-   fd
-  ];
+
   extraLuaConfig = ''
     -- init.lua pentru Neovim
     
@@ -91,4 +86,8 @@ programs.neovim = {
   '';
 };
 
+  home-packages = with pkgs; [
+   ripgrep
+   fd
+  ];
 } 
