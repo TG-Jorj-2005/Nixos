@@ -153,7 +153,7 @@
 
       #workspaces button {
         background: transparent;
-        margin: 0 3px;
+        margin: 0 1px;
         font-size: 30px;
       }
 
