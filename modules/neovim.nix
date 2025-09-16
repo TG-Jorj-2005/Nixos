@@ -89,6 +89,10 @@ programs.neovim = {
     })
 
     vim.cmd.colorscheme("catppuccin")
+    
+    vim.g.copilot_filetypes = {
+      ["*"] = true,
+      }
 
         -- Configurare nvim-cmp separată
     local ok_cmp, cmp = pcall(require, 'cmp')
