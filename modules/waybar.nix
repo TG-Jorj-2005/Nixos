@@ -25,7 +25,7 @@
           on-click-right = "playerctl next";
           on-scroll-up = "playerctl previous";
           on-scroll-down = "playerctl next";
-          exec = "/home/jorj/.config/waybar/spotify.sh";
+          exec = "playerctl metadata xesam:title";
           interval = 5;
         };
 
