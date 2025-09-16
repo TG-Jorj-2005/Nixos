@@ -73,6 +73,7 @@
             car = "🚗";
             default = ["🔈" "🔉" "🔊"];
           };
+          swap-icon-label = true;
           on-click = "pavucontrol";
           on-click-right = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
 	  };
