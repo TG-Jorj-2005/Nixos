@@ -185,17 +185,5 @@
     hardware.bluetooth.powerOnBoot = true;
     hardware.bluetooth.package = pkgs.bluez;
 
-    #Pyprland systemd
-systemd.user.services.pyprland = {
-  description = "Pyprland Daemon";
-  after = [ "graphical-session.target" ];
-  wantedBy = [ "default.target" ];
-
-  serviceConfig = {
-    ExecStart = "${pkgs.pyprland}/bin/pypr daemon";
-    Restart = "always";
-    Environment = "HYPRLAND_INSTANCE_SIGNATURE=%t";
-  };
-};
 
 }

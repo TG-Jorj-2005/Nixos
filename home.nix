@@ -81,6 +81,22 @@
      HYPRLAND_INSTANCE_SIGNATURE = "XDG_RUNTIME_DIR/hypr";
   };
   
+  #Pyprland for wayland
+  systemd.user.services.pyprland = {
+  Unit = {
+    Description = "Pyprland Daemon";
+    After = [ "graphical-session.target" ];
+  };
+  Service = {
+    ExecStart = "${pkgs.pyprland}/bin/pypr daemon";
+    Restart = "always";
+    Environment = "HYPRLAND_INSTANCE_SIGNATURE=%t";
+  };
+  Install = {
+    WantedBy = [ "default.target" ];
+  };
+};
+
 
   programs.home-manager.enable = true;
 
