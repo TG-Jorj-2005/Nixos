@@ -78,21 +78,9 @@
   home.sessionVariables = {
      GTK_THEME = "Catppuccin-Mocha";
      TERMINAL = "alacritty";
-     PYPRLAND_CONTROL=/tmp/pyprland.sock ;
 
   };
   
-  #Pyprland for wayland
-systemd.user.services.pyprland = {
-  Unit.Description = "Pyprland Daemon (delayed)";
-  Service = {
-    ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";  # așteaptă 5 secunde
-    ExecStart = "${pkgs.pyprland}/bin/pypr daemon";
-    Restart = "on-failure";
-    Environment = "HYPRLAND_INSTANCE_SIGNATURE=%t";
-  };
-  Install.WantedBy = [ "graphical-session.target" ];
-};
 
   programs.home-manager.enable = true;
 

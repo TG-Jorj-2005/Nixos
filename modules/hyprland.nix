@@ -16,7 +16,6 @@ home.packages = with pkgs;[
  swaybg             # Background/wallpaper setter pentru Wayland
  xdg-desktop-portal-hyprland # Portal pentru integrarea aplicațiilor cu Hyprland
  wlsunset          # Blue light filter pentru Wayland - schimbă temperatura culorilor
- pyprland           # Plugin manager și extensii pentru Hyprland (scris în Python)
  pavucontrol        # PulseAudio Volume Control - interfață grafică pentru audio
  pamixer            # PulseAudio mixer din linia de comandă
  grim               # Screenshot utility pentru Wayland
@@ -190,10 +189,6 @@ wayland = {
         "SUPER, 9, workspace, 9"
         "SUPER, 0, workspace, 10"
 
-        #Pyprland Scratchpads
-        "SUPER, T, exec, pypr toggle term"
-        "SUPER, Y, exec, pypr toggle spotify"
-        "SUPER, U, exec, pypr toggle discord"
 
         "SUPER, C, exec, pypr workspace code"
         "SUPER, K, exec, pypr workspace music"
@@ -241,45 +236,6 @@ wayland = {
    };
  };
 
- home.file.".config/hypr/pyprland.toml".text = ''
-   [pyprland]
-# ce plugin-uri activezi
-plugins = ["scratchpads", "special_workspaces"]
-
-# === Scratchpads ===
-[scratchpads.term]
-animation = "fromTop"
-command = "alacritty"
-class = "Alacritty"
-size = "80% 80%"
-lazy = true
-
-[scratchpads.spotify]
-animation = "fromBottom"
-command = "spotify"
-class = "Spotify"
-size = "80% 60%"
-lazy = true
-
-[scratchpads.discord]
-animation = "fromRight"
-command = "vesktop"
-class = "Vesktop"
-size = "70% 70%"
-lazy = true
-
-# === Special Workspaces (workspace-uri dedicate aplicațiilor) ===
-[special_workspaces]
-names = ["code", "music"]
-
-[special_workspaces.code]
-command = "alacritty -e nvim"
-# îl activezi cu: pypr workspace code
-
-[special_workspaces.music]
-command = "spotify"
-# îl activezi cu: pypr workspace music
-'';
 
 }
 
