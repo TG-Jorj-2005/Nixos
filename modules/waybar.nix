@@ -144,20 +144,18 @@
         transition-duration: 0.5s;
       }
 
-    #workspaces {
+ #workspaces {
   background-color: #313244;
   padding: 2px 6px;
   border-radius: 8px;
 }
 
 #workspaces button {
-  padding: 0 6px;
   background: transparent;
   border: none;
   border-radius: 50%;
   margin: 0 2px;
   font-size: 16px;
-  transition: all 0.2s ease;
   color: #6c7086; /* fallback */
 }
 
@@ -172,16 +170,10 @@
 #workspaces button.workspace-9 { color: #cdd6f4; } /* White */
 #workspaces button.workspace-10 { color: #6c7086; } /* Gray */
 
-#workspaces button:hover {
-  background-color: rgba(200, 200, 200, 0.1);
-  border-radius: 50%;
-}
-
 #workspaces button.active {
   background-color: currentColor;
   color: #1e1e2e;
-      box-shadow: 0 0 8px currentColor;
-}  
+}
       #window,
       #network,
       #pulseaudio,
