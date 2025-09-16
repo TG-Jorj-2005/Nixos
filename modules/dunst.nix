@@ -9,8 +9,6 @@
       frame_width = 2;
       separator_height = 0;
       transparency = 0;
-      background = "#282828";
-      foreground = "#ebdbb2";
       format = "%s";
       time_format = "%H:%M";
       ignore_newline = true;
