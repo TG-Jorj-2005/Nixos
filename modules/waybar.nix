@@ -193,14 +193,15 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
       }
+
       #custom-spotify {
         padding: 0 8px;
         margin: 0 3px;
         background-color: #00ff00; 
         border-radius: 8px;
-        color: #000000; 
+        color: #000000;
       }
-    '';
+    '';  
   };
     
 }
