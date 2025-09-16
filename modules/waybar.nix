@@ -131,16 +131,6 @@
         font-size: 14px;
         min-height: 0;
       }
-     #workspaces button.ws1 { color: #f38ba8; } /* Red */
-      #workspaces button.ws2 { color: #fab387; } /* Orange */
-      #workspaces button.ws3 { color: #f9e2af; } /* Yellow */
-      #workspaces button.ws4 { color: #a6e3a1; } /* Green */
-      #workspaces button.ws5 { color: #74c7ec; } /* Blue */
-      #workspaces button.ws6 { color: #cba6f7; } /* Purple */
-      #workspaces button.ws7 { color: #f5c2e7; } /* Pink */
-      #workspaces button.ws8 { color: #94e2d5; } /* Cyan */
-      #workspaces button.ws9 { color: #cdd6f4; } /* White */
-      #workspaces button.ws10 { color: #6c7086; } /* Gray */
 
       window#waybar {
         background-color: transparent; 
@@ -154,20 +144,54 @@
         background-color: #313244;
       }
 
-      #workspaces button {
+    #workspaces button {
         padding: 0 8px;
         background-color: transparent;
         color: #6c7086; 
-        border-radius: 8px;
+        border-radius: 50%;
         transition: all 0.3s ease;
+        margin: 0 2px;
       }
+
+      /* Culori pentru workspace-uri - sintaxă corectată */
+      #workspaces button.ws1 { color: #f38ba8; } /* Red */
+      #workspaces button.ws2 { color: #fab387; } /* Orange */
+      #workspaces button.ws3 { color: #f9e2af; } /* Yellow */
+      #workspaces button.ws4 { color: #a6e3a1; } /* Green */
+      #workspaces button.ws5 { color: #74c7ec; } /* Blue */
+      #workspaces button.ws6 { color: #cba6f7; } /* Purple */
+      #workspaces button.ws7 { color: #f5c2e7; } /* Pink */
+      #workspaces button.ws8 { color: #94e2d5; } /* Cyan */
+      #workspaces button.ws9 { color: #cdd6f4; } /* White */
+      #workspaces button.ws10 { color: #6c7086; } /* Gray */
 
       #workspaces button:hover {
         background-color: rgba(137, 180, 250, 0.2); 
-        color: #89b4fa;
+        transform: scale(1.2);
+        border-radius: 50%;
       }
 
+      #workspaces button.active {
+        background-color: currentColor;
+        color: #1e1e2e;
+        transform: scale(1.3);
+        box-shadow: 0 0 10px currentColor;
+      }
 
+      #workspaces button.urgent {
+        animation: workspace-urgent 1s ease-in-out infinite alternate;
+      }
+
+      @keyframes workspace-urgent {
+        from { 
+          opacity: 1;
+          transform: scale(1.3);
+        }
+        to { 
+          opacity: 0.7;
+          transform: scale(1.1);
+        }
+      }
       #window,
       #network,
       #pulseaudio,
