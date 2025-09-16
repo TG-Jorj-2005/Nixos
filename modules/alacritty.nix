@@ -7,7 +7,6 @@
     package = pkgs.kitty;
     
     # Shell
-    shell = "${pkgs.zsh}/bin/zsh";
     shellIntegration.enableZshIntegration = true;
     
     # Font
