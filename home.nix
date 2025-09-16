@@ -72,8 +72,6 @@
     spotify
   ];
 
-  home.file = {
-  };
   fonts.fontconfig.enable = true;
   home.sessionVariables = {
      GTK_THEME = "Catppuccin-Mocha";

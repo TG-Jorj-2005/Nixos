@@ -4,16 +4,9 @@ home.packages = with pkgs;[
  starship           # Prompt pentru terminal rapid și personalizabil
  rofi
  nitch              # System information tool minimal (neofetch alternativ)
- wlr-randr          # Utilitar pentru configurarea monitoarelor în Wayland
  swww               # Wallpaper daemon pentru Wayland - schimbă fundalul desktop-ului
  ffmpeg             # Suite de tools pentru procesarea video/audio
  wl-clipboard       # Utilities pentru clipboard în Wayland (wl-copy, wl-paste)
- hyprland-protocols # Protocoale Wayland specifice pentru Hyprland
- hyprpicker         # Color picker pentru Hyprland - selectează culori de pe ecran
- xfce.thunar             # File manager (din XFCE) - navigare prin fișiere
- swayidle           # Idle daemon - gestionează acțiuni când PC-ul e inactiv
- gtklock            # Screen locker pentru Wayland - blochează ecranul
- swaybg             # Background/wallpaper setter pentru Wayland
  xdg-desktop-portal-hyprland # Portal pentru integrarea aplicațiilor cu Hyprland
  wlsunset          # Blue light filter pentru Wayland - schimbă temperatura culorilor
  pavucontrol        # PulseAudio Volume Control - interfață grafică pentru audio
@@ -23,7 +16,6 @@ home.packages = with pkgs;[
  waybar
  btop
  alacritty
- river-classic
 
 ];
 wayland = {

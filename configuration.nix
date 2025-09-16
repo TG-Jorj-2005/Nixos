@@ -126,8 +126,8 @@
      brightnessctl
      zathura
      nodejs
-    python3
-    nautilus
+     python3
+     nautilus
  ];
    #Hyprland
    programs.hyprland = {
