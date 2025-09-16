@@ -152,8 +152,6 @@
 
 #workspaces button {
   background: transparent;
-  border: none;
-  border-radius: 50%;
   margin: 0 2px;
   font-size: 16px;
   color: #6c7086; /* fallback */
