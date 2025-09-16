@@ -232,6 +232,47 @@ wayland = {
      };
    };
  };
+
+ home.file."~/.config/hypr/pyprland.toml"= ''
+   [pyprland]
+# ce plugin-uri activezi
+plugins = ["scratchpads", "special_workspaces"]
+
+# === Scratchpads ===
+[scratchpads.term]
+animation = "fromTop"
+command = "alacritty"
+class = "Alacritty"
+size = "80% 80%"
+lazy = true
+
+[scratchpads.spotify]
+animation = "fromBottom"
+command = "spotify"
+class = "Spotify"
+size = "80% 60%"
+lazy = true
+
+[scratchpads.discord]
+animation = "fromRight"
+command = "vesktop"
+class = "Vesktop"
+size = "70% 70%"
+lazy = true
+
+# === Special Workspaces (workspace-uri dedicate aplicațiilor) ===
+[special_workspaces]
+names = ["code", "music"]
+
+[special_workspaces.code]
+command = "alacritty -e nvim"
+# îl activezi cu: pypr workspace code
+
+[special_workspaces.music]
+command = "spotify"
+# îl activezi cu: pypr workspace music
+'';
+
 }
 
 #IN CAZ DE CONFLICTE cu ~/.config/hypr/hyprland.conf redenumestel in confdl si fa rebuild la home-manager(se aplica si la restul fisierelor si sa fie git ul up to date cu tot )
