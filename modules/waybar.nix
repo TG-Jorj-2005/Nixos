@@ -42,7 +42,7 @@
         "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
-          format = "{name}";
+          format = "{icon}";
           format-icons = {
             "1" = "●";   # Red dot
             "2" = "●";   # Orange dot
