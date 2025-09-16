@@ -158,16 +158,17 @@
       }
 
       /* Culori pentru workspace-uri - sintaxă corectată */
-      #workspaces button.1 { color: #f38ba8; } /* Red */
-      #workspaces button.2 { color: #fab387; } /* Orange */
-      #workspaces button.3 { color: #f9e2af; } /* Yellow */
-      #workspaces button.4 { color: #a6e3a1; } /* Green */
-      #workspaces button.5 { color: #74c7ec; } /* Blue */
-      #workspaces button.6 { color: #cba6f7; } /* Purple */
-      #workspaces button.7 { color: #f5c2e7; } /* Pink */
-      #workspaces button.8 { color: #94e2d5; } /* Cyan */
-      #workspaces button.9 { color: #cdd6f4; } /* White */
-      #workspaces button.10 { color: #6c7086; } /* Gray */
+     /* Culori pentru workspace-uri - folosind clasele corecte */
+#workspaces button.workspace-1 { color: #f38ba8; } /* Red */
+#workspaces button.workspace-2 { color: #fab387; } /* Orange */
+#workspaces button.workspace-3 { color: #f9e2af; } /* Yellow */
+#workspaces button.workspace-4 { color: #a6e3a1; } /* Green */
+#workspaces button.workspace-5 { color: #74c7ec; } /* Blue */
+#workspaces button.workspace-6 { color: #cba6f7; } /* Purple */
+#workspaces button.workspace-7 { color: #f5c2e7; } /* Pink */
+#workspaces button.workspace-8 { color: #94e2d5; } /* Cyan */
+#workspaces button.workspace-9 { color: #cdd6f4; } /* White */
+#workspaces button.workspace-10 { color: #6c7086; } /* Gray */
 
       #workspaces button:hover {
         background-color: rgba(137, 180, 250, 0.2); 
