@@ -159,16 +159,16 @@
 
       /* Culori pentru workspace-uri - sintaxă corectată */
      /* Culori pentru workspace-uri - folosind clasele corecte */
-#workspaces button.workspace-1 { color: #f38ba8; } /* Red */
-#workspaces button.workspace-2 { color: #fab387; } /* Orange */
-#workspaces button.workspace-3 { color: #f9e2af; } /* Yellow */
-#workspaces button.workspace-4 { color: #a6e3a1; } /* Green */
-#workspaces button.workspace-5 { color: #74c7ec; } /* Blue */
-#workspaces button.workspace-6 { color: #cba6f7; } /* Purple */
-#workspaces button.workspace-7 { color: #f5c2e7; } /* Pink */
-#workspaces button.workspace-8 { color: #94e2d5; } /* Cyan */
-#workspaces button.workspace-9 { color: #cdd6f4; } /* White */
-#workspaces button.workspace-10 { color: #6c7086; } /* Gray */
+#workspaces button.workspace-1 { color: #f38ba8 !important; } /* Red */
+#workspaces button.workspace-2 { color: #fab387 !important; } /* Orange */
+#workspaces button.workspace-3 { color: #f9e2af !important; } /* Yellow */
+#workspaces button.workspace-4 { color: #a6e3a1 !important; } /* Green */
+#workspaces button.workspace-5 { color: #74c7ec !important; } /* Blue */
+#workspaces button.workspace-6 { color: #cba6f7 !important; } /* Purple */
+#workspaces button.workspace-7 { color: #f5c2e7 !important; } /* Pink */
+#workspaces button.workspace-8 { color: #94e2d5 !important; } /* Cyan */
+#workspaces button.workspace-9 { color: #cdd6f4 !important; } /* White */
+#workspaces button.workspace-10 { color: #6c7086 !important; } /* Gray */
 
       #workspaces button:hover {
         background-color: rgba(137, 180, 250, 0.2); 
@@ -176,8 +176,8 @@
       }
 
       #workspaces button.active {
-        background-color: currentColor;
-        color: #1e1e2e;
+        background-color: currentColor !important;
+        color: #1e1e2e !important;
         box-shadow: 0 0 10px currentColor;
       }
 
