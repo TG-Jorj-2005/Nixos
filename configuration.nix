@@ -129,6 +129,15 @@
      python3
      ghostty
      nautilus
+
+    zsh
+    zsh-completions
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    fzf          # fuzzy finder
+    bat          # cat cu syntax highlighting  
+    exa          # ls modern
+    ripgrep
  ];
    #Hyprland
    programs.hyprland = {
@@ -152,9 +161,10 @@
     ohMyZsh = {
       enable = true;
       plugins = [ "git" "sudo" "docker" "kubectl" ];
-      theme = "robbyrussell"; # sau alt tema preferată
     };
   };
+  # Setează ZSH ca shell implicit pentru utilizatorul TG-Jorj-2005
+    environment.shells = with pkgs; [ zsh ];
        
   users.defaultUserShell = pkgs.zsh;
   #Configuratii: 
