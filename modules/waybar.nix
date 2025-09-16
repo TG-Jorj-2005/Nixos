@@ -202,9 +202,9 @@
      #custom-spotify {
         padding: 0 8px;
         margin: 0 3px;
-        background-color: #1db954; /* Spotify green */
+        color: rgba(30, 215, 96, 1);   /* text verde */
+        background-color: #000000;   /* Spotify green */
         border-radius: 8px;
-        color: rgba(0,0,0,0);
         animation: spotify-pulse 2s ease-in-out infinite alternate;
       }
 
