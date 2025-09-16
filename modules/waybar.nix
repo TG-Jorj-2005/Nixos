@@ -26,7 +26,7 @@
           # exec = "playerctl metadata --format '{{ title }} - {{ artist }}' 2>/dev/null || echo 'No music playing'";
           
           exec-if = "pgrep spotify";
-          interval = 2;
+          interval = 1;
           
           # Controale click
           on-click = "playerctl play-pause";
