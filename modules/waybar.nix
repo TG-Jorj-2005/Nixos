@@ -40,16 +40,16 @@
           all-outputs = true;
           format = "{icon}";
           format-icons = {
-            "1" = "💻";  # Terminal
-            "2" = "🌐";  # Browser
-            "3" = "⚡";  # Code/Development  
-            "4" = "📁";  # Files/Explorer
-            "5" = "🎵";  # Music/Media
-            "6" = "🎮";  # Games/Entertainment
-            "7" = "💬";  # Chat/Communication
-            "8" = "📺";  # Video/Streaming
-            "9" = "⚙️";  # Settings/System
-            "10" = "📦"; # Miscellaneous
+            "1" = "●";   # Red dot
+            "2" = "●";   # Orange dot
+            "3" = "●";   # Yellow dot
+            "4" = "●";   # Green dot
+            "5" = "●";   # Blue dot
+            "6" = "●";   # Purple dot
+            "7" = "●";   # Pink dot
+            "8" = "●";   # Cyan dot
+            "9" = "●";   # White dot
+            "10" = "●";  # Gray dot
           };
         };
         
@@ -131,6 +131,16 @@
         font-size: 14px;
         min-height: 0;
       }
+      #workspaces button[data-id="1"] { color: #f38ba8; } /* Red */
+      #workspaces button[data-id="2"] { color: #fab387; } /* Orange */
+      #workspaces button[data-id="3"] { color: #f9e2af; } /* Yellow */
+      #workspaces button[data-id="4"] { color: #a6e3a1; } /* Green */
+      #workspaces button[data-id="5"] { color: #74c7ec; } /* Blue */
+      #workspaces button[data-id="6"] { color: #cba6f7; } /* Purple */
+      #workspaces button[data-id="7"] { color: #f5c2e7; } /* Pink */
+      #workspaces button[data-id="8"] { color: #94e2d5; } /* Cyan */
+      #workspaces button[data-id="9"] { color: #cdd6f4; } /* White */
+      #workspaces button[data-id="10"] { color: #6c7086; } /* Gray */
 
       window#waybar {
         background-color: transparent; 
@@ -156,6 +166,7 @@
         background-color: rgba(137, 180, 250, 0.2); 
         color: #89b4fa;
       }
+
 
       #window,
       #network,
