@@ -171,14 +171,12 @@
 
       #workspaces button:hover {
         background-color: rgba(137, 180, 250, 0.2); 
-        transform: scale(1.2);
         border-radius: 50%;
       }
 
       #workspaces button.active {
         background-color: currentColor;
         color: #1e1e2e;
-        transform: scale(1.3);
         box-shadow: 0 0 10px currentColor;
       }
 
@@ -189,11 +187,9 @@
       @keyframes workspace-urgent {
         from { 
           opacity: 1;
-          transform: scale(1.3);
         }
         to { 
           opacity: 0.7;
-          transform: scale(1.1);
         }
       }
 
