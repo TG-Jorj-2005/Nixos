@@ -78,6 +78,7 @@
   home.sessionVariables = {
      GTK_THEME = "Catppuccin-Mocha";
      TERMINAL = "alacritty";
+     HYPRLAND_INSTANCE_SIGNATURE = "XDG_RUNTIME_DIR/hypr";
   };
   
 
