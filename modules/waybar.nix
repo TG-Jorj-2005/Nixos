@@ -19,7 +19,7 @@
         
         "custom/spotify" = {
           format = " {title} - {artist}";
-          max-length = 20;
+          max-length = 40;
           tooltip-format = " {title} - {artist}\n{album}";
           on-click = "playerctl play-pause";
           on-click-right = "playerctl next";
