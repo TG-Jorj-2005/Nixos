@@ -8,7 +8,8 @@
 	      ./modules/rofi.nix
 	      ./modules/alacritty.nix
 	      ./modules/rust.nix
-	      ./modules/neovim.nix
+        ./modules/neovim.nix
+        ./modules/dunst.nix
 		       ];
 
 
