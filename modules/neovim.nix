@@ -76,6 +76,18 @@ programs.neovim = {
       lualine = {},
     }
 
+    -- Configurare Catppuccin cu opțiuni
+    safe_setup("catppuccin", {
+      flavour = "mocha", -- latte, frappe, macchiato, mocha
+      background = {
+        light = "latte",
+        dark = "mocha",
+      },
+      transparent_background = false,
+      show_end_of_buffer = false,
+      term_colors = false,
+    })
+
     vim.cmd.colorscheme("catppuccin")
 
         -- Configurare nvim-cmp separată
