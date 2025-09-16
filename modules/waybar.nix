@@ -204,7 +204,7 @@
         margin: 0 3px;
         background-color: #1db954; /* Spotify green */
         border-radius: 8px;
-        color: #000000;
+        color: rgba(0,0,0,0);
         animation: spotify-pulse 2s ease-in-out infinite alternate;
       }
 
