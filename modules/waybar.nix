@@ -18,11 +18,15 @@
         modules-right = [ "network" "pulseaudio" "battery" "clock" ];
         
         "custom/spotify" = {
-          format = "  {}";
+          format = " {}";
           max-length = 40;
+          # Comandă care funcționează - testează în terminal mai întâi
           exec = "playerctl metadata title 2>/dev/null || echo 'No music playing'";
+          # Sau pentru title + artist (decomentează dacă prima nu merge):
+          # exec = "playerctl metadata --format '{{ title }} - {{ artist }}' 2>/dev/null || echo 'No music playing'";
+          
           exec-if = "pgrep spotify";
-          interval = 2;
+          interval = 5;
           
           # Controale click
           on-click = "playerctl play-pause";
@@ -32,13 +36,13 @@
           
           # Tooltip pentru info suplimentare
           tooltip = true;
-          tooltip-format = "  Now playing: {}";
+          tooltip-format = " Now playing: {}";
         };
 
         "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
-          format = "{icon}";
+          format = "{name}";
           format-icons = {
             "1" = "●";   # Red dot
             "2" = "●";   # Orange dot
@@ -144,7 +148,7 @@
         background-color: #313244;
       }
 
-    #workspaces button {
+      #workspaces button {
         padding: 0 8px;
         background-color: transparent;
         color: #6c7086; 
@@ -167,12 +171,14 @@
 
       #workspaces button:hover {
         background-color: rgba(137, 180, 250, 0.2); 
+        transform: scale(1.2);
         border-radius: 50%;
       }
 
       #workspaces button.active {
         background-color: currentColor;
         color: #1e1e2e;
+        transform: scale(1.3);
         box-shadow: 0 0 10px currentColor;
       }
 
@@ -183,11 +189,14 @@
       @keyframes workspace-urgent {
         from { 
           opacity: 1;
+          transform: scale(1.3);
         }
         to { 
           opacity: 0.7;
+          transform: scale(1.1);
         }
       }
+
       #window,
       #network,
       #pulseaudio,
@@ -247,6 +256,7 @@
 
       #custom-spotify:hover {
         background: linear-gradient(135deg, #1ed760 0%, #1db954 100%);
+        transform: translateY(-1px);
         box-shadow: 0 6px 16px rgba(29, 185, 84, 0.4);
       }
 
