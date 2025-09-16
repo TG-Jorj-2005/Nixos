@@ -141,7 +141,8 @@
        extraPortals = [pkgs.xdg-desktop-portal-gtk ];
          };  
       };
-
+   
+  users.defaultUserShell = pkgs.zsh;
   #Configuratii: 
      programs.git = {
     enable = true;
