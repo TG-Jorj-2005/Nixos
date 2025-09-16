@@ -129,7 +129,8 @@
      nodejs
      python3
      nautilus
-
+     playerctl
+              
     zsh
     zsh-completions
     zsh-autosuggestions
