@@ -116,7 +116,7 @@
      style = ''
       * {
         border: none;
-        border-radius: 8;
+        border-radius: 8px;
         font-family: "JetBrainsMono Nerd Font";
         font-size: 14px;
         min-height: 0;
