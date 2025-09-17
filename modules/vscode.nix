@@ -129,8 +129,8 @@
   home.packages = with pkgs; [
     # Core C++ development
     gcc
-    clang
-    clang-tools    # clang-format, clang-tidy for MISRA compliance
+   # clang
+  #  clang-tools    # clang-format, clang-tidy for MISRA compliance
     cmake
     ninja          # Fast build system
     pkg-config
