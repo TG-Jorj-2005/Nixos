@@ -83,7 +83,7 @@
       "terminal.integrated.fontSize" = 12;
       
       # Theme and appearance
-      "workbench.colorTheme" = "Forest Night - Ethereal";
+      "workbench.colorTheme" = "forrest-knight.forest-night-theme";
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.editor.highlightModifiedTabs" = true;
       
