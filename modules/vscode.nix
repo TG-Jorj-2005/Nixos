@@ -8,7 +8,7 @@
 
     
     # Essential extensions for C++ automotive development
-      profiles."TG-Jorj-2005".extensions = with pkgs.vscode-extensions; [
+      profiles.default.extensions = with pkgs.vscode-extensions; [
       # Core C++ Development
       ms-vscode.cpptools                 # C++ IntelliSense
       ms-vscode.cmake-tools              # CMake integration
@@ -43,7 +43,7 @@
 
     ];
     # User settings optimized for C++ automotive development
-    profiles."TG-Jorj-2005".userSettings = {
+    profiles.default.userSettings = {
       # Editor settings
       "editor.formatOnSave" = true;
       "editor.formatOnType" = true;
@@ -123,7 +123,7 @@
     };
 
     # Keybindings for efficient automotive development
-    profiles."TG-Jorj-2005".keybindings = [
+    profiles.default.keybindings = [
       {
         "key" = "ctrl+shift+b";
         "command" = "cmake.build";
