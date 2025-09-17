@@ -146,7 +146,6 @@
 
     bluez
     bluez-tools
-    bluetuictl
 
 
  ];
@@ -212,10 +211,17 @@
     wireplumber.enable = true;
   };
     #Bluetooth    
-    hardware.bluetooth.enable = true;
-    services.blueman.enable = true;
-    hardware.bluetooth.powerOnBoot = true;
-    hardware.bluetooth.package = pkgs.bluez;
+  hardware.bluetooth = {
+  enable = true;
+  powerOnBoot = true;
+  package = pkgs.bluez;
+  settings = {
+    General = {
+      Enable = "Source,Sink,Media,Socket";
+      Experimental = true;
+    };
+  };
+};
 
 
 
