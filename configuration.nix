@@ -158,11 +158,6 @@
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-    # Oh My Zsh (opțional)
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" "sudo" "docker" "kubectl" ];
-    };
   };
   # Setează ZSH ca shell implicit pentru utilizatorul TG-Jorj-2005
     environment.shells = with pkgs; [ zsh ];

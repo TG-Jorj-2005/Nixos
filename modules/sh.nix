@@ -75,8 +75,9 @@ shellAliases = alias;
 
 initContent = ''
    if [[ $- == *i* ]]; then
-      nitch &
-    fi    
+       nitch
+     fi
+
     export EDITOR="code"
     export TERMINAL="alacritty"
    '';
