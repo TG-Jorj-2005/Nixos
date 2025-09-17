@@ -15,7 +15,7 @@ home.packages = with pkgs;[
  slurp         # Utilitar pentru selectarea unei zone de pe ecran (folosit cu grim)
  waybar
  btop
-
+ xfce.thunar
  
 
 ];
@@ -33,7 +33,7 @@ wayland = {
 
        #Programer use
         "$terminal" = "alacritty";
-	"$fileManager" = "nautilus";
+	"$fileManager" = "thunar";
 	"$menu" = "rofi -show drun";
 	
 
