@@ -146,9 +146,14 @@
 
     bluez
     bluez-tools
+    
+    gnome-keyring
+    libsecret
 
+  ];
 
- ];
+  services.gnome.keyring.enable = true;
+
    #Hyprland
    programs.hyprland = {
      enable = true;
