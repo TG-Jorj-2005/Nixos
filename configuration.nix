@@ -212,4 +212,5 @@
     hardware.bluetooth.package = pkgs.bluez;
 
 
+
 }
