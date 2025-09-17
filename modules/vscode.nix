@@ -149,7 +149,7 @@
   };
 
   # Additional development tools for automotive C++
-  home.Packages = with pkgs; [
+  home.packages = with pkgs; [
     # Core C++ development
     gcc
     clang
