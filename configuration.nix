@@ -92,7 +92,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Tanase George";
-    extraGroups = [ "networkmanager" "users" "wheel" "audio" "video" ];
+    extraGroups = [ "networkmanager" "users" "wheel" "audio" "video" "bluetooth" ];
     packages = with pkgs; [];
   };
   # Sa nu mai am nevoie de parola la sudo
