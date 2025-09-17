@@ -172,7 +172,7 @@
 
       #workspaces button.active {
         font-size: 35px; 
-        text-shadow: 0 0 3px currentColor;
+        text-shadow: 0 0 1px currentColor;
 
       }
 
