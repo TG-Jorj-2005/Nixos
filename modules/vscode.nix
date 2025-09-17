@@ -24,7 +24,6 @@
       # AI Assisted development
       github.copilot
       github.copilot-chat
-      github.copilot-labs # optional
 
 
       # Code Quality & Formatting
