@@ -6,7 +6,7 @@
     package = pkgs.vscode;
     
     # Essential extensions for C++ automotive development
-      extensions = with pkgs.vscode-extensions; [
+      profiles."TG-Jorj-2005".extensions = with pkgs.vscode-extensions; [
       # Core C++ Development
       ms-vscode.cpptools                 # C++ IntelliSense
       ms-vscode.cmake-tools              # CMake integration
@@ -24,7 +24,7 @@
     ];
 
     # User settings optimized for C++ automotive development
-    userSettings = {
+    profiles."TG-Jorj-2005".userSettings = {
       # Editor settings
       "editor.formatOnSave" = true;
       "editor.formatOnType" = true;
