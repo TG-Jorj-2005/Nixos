@@ -105,7 +105,7 @@
     };
 
     # Keybindings for efficient automotive development
-    keybindings = [
+    profiles."TG-Jorj-2005".keybindings = [
       {
         "key" = "ctrl+shift+b";
         "command" = "cmake.build";
