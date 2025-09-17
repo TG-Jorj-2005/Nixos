@@ -10,6 +10,7 @@
 	      ./modules/rust.nix
         ./modules/neovim.nix
         ./modules/dunst.nix
+        ./modules/vscode.nix
 		       ];
 
 
