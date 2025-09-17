@@ -222,7 +222,7 @@
     };
   };
 };
-
+services.dbus.enable = true;
 
 
 }
