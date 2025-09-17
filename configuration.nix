@@ -12,6 +12,10 @@
    
    #Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  # Display Manager
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
 
   #Greetd
     services.greetd = {
