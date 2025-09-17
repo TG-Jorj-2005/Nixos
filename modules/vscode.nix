@@ -38,7 +38,6 @@
       # Code Quality & Formatting
       ms-vscode.cpptools-extension-pack  # Additional C++ tools
 
-      forrest-knight.forest-night-theme
 
     ];
     # User settings optimized for C++ automotive development
