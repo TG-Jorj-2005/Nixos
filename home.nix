@@ -10,7 +10,6 @@
 	      ./modules/rust.nix
         ./modules/neovim.nix
         ./modules/dunst.nix
-        ./modules/yazi.nix
 		       ];
 
 
