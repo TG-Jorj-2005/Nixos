@@ -6,44 +6,21 @@
     package = pkgs.vscode;
     
     # Essential extensions for C++ automotive development
-    extensions = with pkgs.vscode-extensions; [
+      extensions = with pkgs.vscode-extensions; [
       # Core C++ Development
-      ms-vscode.cpptools-extension-pack  # IntelliSense, debugging, code browsing
-      ms-vscode.cmake-tools              # CMake integration
       ms-vscode.cpptools                 # C++ IntelliSense
-      
-      # Code Quality & Formatting
-      xaver.clang-format                 # Code formatting (MISRA compliance)
-      ms-vscode.vscode-clangd            # Alternative C++ language server
+      ms-vscode.cmake-tools              # CMake integration
       
       # Version Control
       eamodio.gitlens                    # Advanced Git integration
       
       # Build & Debug
       vadimcn.vscode-lldb                # LLDB debugger for embedded
-      webfreak.debug                     # Debug visualizer
       
-      # Documentation & Comments
-      cschlosser.doxdocgen               # Doxygen documentation generator
-      aaron-bond.better-comments         # Enhanced comments for safety-critical code
-      
-      # Project Management
-      gruntfuggly.todo-tree              # TODO/FIXME/NOTE tracking
-      ms-vscode.hexeditor                # Hex editor for binary analysis
-      
-      # Theme & UI (optional but nice)
+      # Theme & UI
       github.github-vscode-theme
       pkief.material-icon-theme
       
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      # Automotive-specific extensions from marketplace
-      {
-        name = "autosar-tools";
-        publisher = "vector";
-        version = "1.0.0";
-        sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Update with actual hash
-      }
-      # Add more automotive-specific extensions here
     ];
 
     # User settings optimized for C++ automotive development
