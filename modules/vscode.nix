@@ -149,7 +149,7 @@
   };
 
   # Additional development tools for automotive C++
-  environment.systemPackages = with pkgs; [
+  home.Packages = with pkgs; [
     # Core C++ development
     gcc
     clang
