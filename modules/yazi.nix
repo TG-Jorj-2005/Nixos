@@ -144,8 +144,8 @@
     # Key mappings
     keymap = {
       manager.prepend_keymap = [
-        { on = [ "l" ]; run = "plugin --sync smart-enter"; desc = "Enter the child directory, or open the file"; }
-        { on = [ "h" ]; run = "leave"; desc = "Go back to the parent directory"; }
+        { on = [ "l" ]; run = "enter"; desc = "Enter directory or open file"; }
+        { on = [ "h" ]; run = "leave"; desc = "Go back to parent directory"; }
         { on = [ "<C-s>" ]; run = "escape --visual --select"; desc = "Cancel selection"; }
         { on = [ "y" ]; run = [ "yank" ]; desc = "Copy the selected files"; }
         { on = [ "x" ]; run = [ "yank --cut" ]; desc = "Cut the selected files"; }
@@ -165,10 +165,7 @@
       ];
     };
 
-    # Plugin-uri și configurații suplimentare
-    plugins = {
-      smart-enter = ./smart-enter.yazi;
-    };
+    # Plugin-uri se configurează separat prin fișiere
   };
 
   # Script helper pentru smart-enter
