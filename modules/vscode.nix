@@ -25,7 +25,9 @@
       github.copilot
       github.copilot-chat
 
-      
+      # Code Quality & Formatting
+      ms-vscode.cpptools-extension-pack  # Additional C++ tools
+
     ];
 
     # User settings optimized for C++ automotive development
