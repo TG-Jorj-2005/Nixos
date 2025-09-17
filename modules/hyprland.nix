@@ -15,7 +15,7 @@ home.packages = with pkgs;[
  slurp         # Utilitar pentru selectarea unei zone de pe ecran (folosit cu grim)
  waybar
  btop
-dolphin
+kdePackages.dolphin
     udisks2
     udiskie
     gvfs 
