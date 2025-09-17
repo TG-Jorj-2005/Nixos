@@ -29,7 +29,7 @@
       # Code Quality & Formatting
       ms-vscode.cpptools-extension-pack  # Additional C++ tools
 
-      forrest-knight.forest-night-theme
+      forest-night-theme
 
     ];
 
