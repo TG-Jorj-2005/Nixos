@@ -4,6 +4,8 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
+        mutableExtensionsDir = true;
+
     
     # Essential extensions for C++ automotive development
       profiles."TG-Jorj-2005".extensions = with pkgs.vscode-extensions; [
