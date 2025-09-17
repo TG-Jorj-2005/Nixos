@@ -74,10 +74,9 @@ syntaxHighlighting.enable = true;
 shellAliases = alias;
 
 initContent = ''
-    if [[ $- == *i* ]]; then
-      nitch
-    fi
-    
+   if [[ $- == *i* ]]; then
+      nitch &
+    fi    
     export EDITOR="code"
     export TERMINAL="alacritty"
    '';
@@ -87,17 +86,13 @@ initContent = ''
       share = true;
       ignoreDups = true;
     };
-      oh-my-zsh = {
-      enable = true;
-      theme = "agnoster"; # funcționează bine cu Catppuccin
-      plugins = [ 
+     # oh-my-zsh = {
+     # enable = true;
+      #theme = "agnostar"; # funcționează bine cu Catppuccin
+      #plugins = [ 
         "git" 
-        "sudo" 
-        "history" 
-        "colored-man-pages"
-        "command-not-found"
-      ];
-    };
+      #];
+    #};
 };
 
 
