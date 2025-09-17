@@ -20,6 +20,11 @@
       # Theme & UI
       github.github-vscode-theme
       pkief.material-icon-theme
+
+      # AI Assisted development
+      github.copilot
+      github.copilot-chat
+
       
     ];
 
