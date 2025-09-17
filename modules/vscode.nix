@@ -24,15 +24,23 @@
       # AI Assisted development
       github.copilot
       github.copilot-chat
-
+      
+      #Theme
+      (pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      name = "forest-night-theme";
+      publisher = "forrest-knight";
+      version = "1.0.3";
+      sha256 = "0wgdx0jgl00nr9ax7h4cy7n8wsmf6x3c5qp1avlxyw7jf7qs3x1y";
+    };
+  })
 
       # Code Quality & Formatting
       ms-vscode.cpptools-extension-pack  # Additional C++ tools
 
-      forest-night-theme
+      forrest-knight.forest-night-theme
 
     ];
-
     # User settings optimized for C++ automotive development
     profiles."TG-Jorj-2005".userSettings = {
       # Editor settings
