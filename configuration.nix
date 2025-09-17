@@ -143,6 +143,12 @@
     fzf          # fuzzy finder
     bat          # cat cu syntax highlighting  
     ripgrep
+
+    bluez
+    bluez-tools
+    bluetuictl
+
+
  ];
    #Hyprland
    programs.hyprland = {
