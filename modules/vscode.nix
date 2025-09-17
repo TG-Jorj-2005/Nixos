@@ -150,7 +150,9 @@
     # Version control and collaboration
     git
     git-lfs
-    tig           # Text-mode git interface
+    tig  # Text-mode git interface
+
+    nix-diff
     
     # Build and packaging
     libtool
