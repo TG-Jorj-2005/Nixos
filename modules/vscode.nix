@@ -176,7 +176,6 @@
     tig           # Text-mode git interface
     
     # Build and packaging
-    autotools-dev
     libtool
     
     # Documentation and modeling (automotive development)
