@@ -86,13 +86,6 @@ initContent = ''
       share = true;
       ignoreDups = true;
     };
-     # oh-my-zsh = {
-     # enable = true;
-      #theme = "agnostar"; # funcționează bine cu Catppuccin
-      #plugins = [ 
-        "git" 
-      #];
-    #};
 };
 
 
