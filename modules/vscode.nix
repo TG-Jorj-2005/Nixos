@@ -44,85 +44,70 @@
     ];
     # User settings optimized for C++ automotive development
     profiles.default.userSettings = {
-      # Editor settings
-      "editor.formatOnSave" = true;
-      "editor.formatOnType" = true;
-      "editor.rulers" = [ 80 120 ];  # MISRA C++ line length guidelines
-      "editor.tabSize" = 4;
-      "editor.insertSpaces" = true;
-      "editor.trimAutoWhitespace" = true;
-      "files.trimTrailingWhitespace" = true;
-      "files.insertFinalNewline" = true;
-      
-      # C++ specific settings
-      "C_Cpp.default.cppStandard" = "c++17";  # Common in automotive
-      "C_Cpp.default.cStandard" = "c11";
-      "C_Cpp.default.intelliSenseMode" = "linux-gcc-x64";
-      "C_Cpp.default.compilerPath" = "/run/current-system/sw/bin/gcc";
-      "C_Cpp.clang_format_style" = "file";    # Use .clang-format file
-      "C_Cpp.autocompleteAddParentheses" = true;
-      "C_Cpp.errorSquiggles" = "enabled";
-      
-      # CMake settings
-      "cmake.buildDirectory" = "\${workspaceFolder}/build";
-      "cmake.configureOnOpen" = false;
-      "cmake.generator" = "Unix Makefiles";
-      
-      # Git settings
-      "git.enableSmartCommit" = true;
-      "git.confirmSync" = false;
-      "git.autofetch" = true;
-      "gitlens.currentLine.enabled" = true;
-      "gitlens.hovers.currentLine.over" = "line";
-      
-      # Debug settings
-      "debug.allowBreakpointsEverywhere" = true;
-      "debug.console.fontSize" = 12;
-      "debug.internalConsoleOptions" = "openOnSessionStart";
-      
-      # File associations for automotive development
-      "files.associations" = {
-        "*.arxml" = "xml";           # AUTOSAR XML files
-        "*.a2l" = "plaintext";       # ASAM MCD-2 MC files
-        "*.dbc" = "plaintext";       # CAN database files
-        "*.ldf" = "plaintext";       # LIN description files
-        "*.ODX-D" = "xml";           # ODX diagnostic data
+    "C_Cpp.autocompleteAddParentheses" = true;
+    "C_Cpp.clang_format_style" = "file";
+    "C_Cpp.default.cStandard" = "c11";
+    "C_Cpp.default.compilerPath" = "/run/current-system/sw/bin/gcc";
+    "C_Cpp.default.cppStandard" = "c++17";
+    "C_Cpp.default.intelliSenseMode" = "linux-gcc-x64";
+    "C_Cpp.errorSquiggles" = "enabled";
+    "cmake.buildDirectory" = "\${workspaceFolder}/build";
+    "cmake.configureOnOpen" = false;
+    "cmake.generator" = "Unix Makefiles";
+    "debug.allowBreakpointsEverywhere" = true;
+    "debug.console.fontSize" = 12;
+    "debug.internalConsoleOptions" = "openOnSessionStart";
+    "editor.formatOnSave" = true;
+    "editor.formatOnType" = true;
+    "editor.insertSpaces" = true;
+    "editor.rulers" = [
+      80
+      120
+    ];
+    "editor.tabSize" = 4;
+    "editor.trimAutoWhitespace" = true;
+    "files.associations" = {
+      "*.ODX-D" = "xml";
+      "*.a2l" = "plaintext";
+      "*.arxml" = "xml";
+      "*.dbc" = "plaintext";
+      "*.ldf" = "plaintext";
+    };
+    "files.insertFinalNewline" = true;
+    "files.trimTrailingWhitespace" = true;
+    "git.autofetch" = true;
+    "git.confirmSync" = false;
+    "git.enableSmartCommit" = true;
+    "gitlens.currentLine.enabled" = true;
+    "gitlens.hovers.currentLine.over" = "line";
+    "terminal.integrated.fontSize" = 12;
+    "terminal.integrated.shell.linux" = "/run/current-system/sw/bin/zsh";
+    "todoTree.general.tags" = [
+      "TODO"
+      "FIXME"
+      "HACK"
+      "SAFETY"
+      "MISRA"
+      "REQ"
+      "REVIEW"
+    ];
+    "todoTree.highlights.customHighlight" = {
+      "MISRA" = {
+        "foreground" = "#orange";
+        "icon" = "law";
       };
-      
-      # Terminal settings
-      "terminal.integrated.shell.linux" = "/run/current-system/sw/bin/zsh";
-      "terminal.integrated.fontSize" = 12;
-      
-      # Theme and appearance
-      "workbench.colorTheme" = "Forest Night - Ethereal";
-      "workbench.iconTheme" = "material-icon-theme";
-      "workbench.editor.highlightModifiedTabs" = true;
-      
-      # Safety-critical development settings
-      "todoTree.general.tags" = [
-        "TODO"
-        "FIXME" 
-        "HACK"
-        "SAFETY"     # Safety-critical comments
-        "MISRA"      # MISRA compliance notes
-        "REQ"        # Requirements traceability
-        "REVIEW"     # Code review comments
-      ];
-      
-      "todoTree.highlights.customHighlight" = {
-        "SAFETY" = {
-          "icon" = "alert";
-          "foreground" = "#ff0000";
-          "background" = "#ffff00";
-          "iconColour" = "#ff0000";
-        };
-        "MISRA" = {
-          "icon" = "law";
-          "foreground" = "#orange";
-        };
+      "SAFETY" = {
+        "background" = "#ffff00";
+        "foreground" = "#ff0000";
+        "icon" = "alert";
+        "iconColour" = "#ff0000";
       };
     };
-
+    "workbench.colorTheme" = "Forest Night - Ethereal";
+    "workbench.editor.highlightModifiedTabs" = true;
+    "workbench.iconTheme" = "material-icon-theme";
+      };
+      
     # Keybindings for efficient automotive development
     profiles.default.keybindings = [
       {
