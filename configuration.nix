@@ -132,7 +132,6 @@
      zathura
      nodejs
      python3
-     nautilus
      playerctl
      font-awesome
               
