@@ -19,7 +19,7 @@ kdePackages.dolphin
     udisks2
     udiskie
     gvfs 
-
+ flameshot
 ];
 wayland = {
  windowManager={
