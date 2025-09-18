@@ -1,5 +1,6 @@
 { pkgs, ... }:
-
+let
+  Json = builtins.fromJSON(builtins.readFile ~/.config/Code/User/settings.json);
 {
   programs.vscode = {
     enable = true;
@@ -42,27 +43,11 @@
 
 
     ];
+    profiles.default.userSettings={
+     
+    };
     # User settings optimized for C++ automotive development
      # Keybindings for efficient automotive development
-    profiles.default.keybindings = [
-      {
-        "key" = "ctrl+shift+b";
-        "command" = "cmake.build";
-      }
-      {
-        "key" = "f5";
-        "command" = "cmake.debugTarget";
-      }
-      {
-        "key" = "ctrl+shift+t";
-        "command" = "cmake.runTests";
-      }
-      {
-        "key" = "ctrl+shift+f";
-        "command" = "clang-format.format";
-      }
-    ];
-  };
 
   # Additional development tools for automotive C++
   home.packages = with pkgs; [
