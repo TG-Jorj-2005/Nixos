@@ -1,7 +1,8 @@
 { pkgs, ... }:
 let
   Json = builtins.fromJSON(builtins.readFile ~/.config/Code/User/settings.json);
-{
+  
+in{
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
@@ -41,10 +42,10 @@ let
       # Code Quality & Formatting
       ms-vscode.cpptools-extension-pack  # Additional C++ tools
 
-
+   
     ];
     profiles.default.userSettings={
-     
+      inherit = Json;   
     };
     # User settings optimized for C++ automotive development
      # Keybindings for efficient automotive development
