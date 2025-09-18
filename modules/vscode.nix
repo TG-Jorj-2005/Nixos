@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  Json = builtins.fromJSON(builtins.readFile ~/.config/Code/User/settings.json);
+  Json = builtins.fromJSON(builtins.readFile /home/jorj/.config/Code/User/settings.json);
   
 in{
   programs.vscode = {
