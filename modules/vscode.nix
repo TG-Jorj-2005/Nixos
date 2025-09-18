@@ -1,8 +1,5 @@
 { pkgs, ... }:
-let
-  Json = builtins.fromJSON(builtins.readFile /home/jorj/.config/Code/User/settings.json);
-  
-in{
+{
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
@@ -44,9 +41,6 @@ in{
 
    
     ];
-    profiles.default.userSettings={
-      inherit Json;   
-    };
 
   };
     # User settings optimized for C++ automotive development
