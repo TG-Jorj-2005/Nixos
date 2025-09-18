@@ -202,8 +202,8 @@ wayland = {
         
         # Screenshot bindings
         ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
-        ",SHIFT, Print, exec, grim - | wl-copy"
-        ",CTRL, Print, exec, grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
+        " SHIFT, Print, exec, grim - | wl-copy"
+        " CTRL, Print, exec, grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
         
         # Volume and brightness controls
         ", XF86AudioRaiseVolume, exec, pamixer -i 5"
