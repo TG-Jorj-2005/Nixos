@@ -47,6 +47,8 @@ in{
     profiles.default.userSettings={
       inherit Json;   
     };
+
+  };
     # User settings optimized for C++ automotive development
      # Keybindings for efficient automotive development
 
