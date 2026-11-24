@@ -15,8 +15,6 @@ It is primarily intended as a record of my own system and as a reference for exp
 
 ---
 
-https://github.com/user-attachments/assets/7fa0321f-4698-4a1c-8610-464f2b034822
-
 ## ✨ Highlights
 
 * ❄️ Declarative **NixOS** configuration
