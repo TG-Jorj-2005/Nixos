@@ -15,6 +15,8 @@ It is primarily intended as a record of my own system and as a reference for exp
 
 ---
 
+[Watch the silent project video](https://tg-jorj-2005.github.io/proiecte/nixos/#prezentare) · [MP4 file](docs/media/prezentare.mp4)
+
 ## ✨ Highlights
 
 * ❄️ Declarative **NixOS** configuration
