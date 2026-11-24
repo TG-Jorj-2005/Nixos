@@ -15,7 +15,7 @@ It is primarily intended as a record of my own system and as a reference for exp
 
 ---
 
-[Watch the silent project video](https://tg-jorj-2005.github.io/proiecte/nixos/#prezentare) · [MP4 file](docs/media/prezentare.mp4)
+https://github.com/user-attachments/assets/7fa0321f-4698-4a1c-8610-464f2b034822
 
 ## ✨ Highlights
 
