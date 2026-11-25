@@ -15,6 +15,12 @@ It is primarily intended as a record of my own system and as a reference for exp
 
 ---
 
+## Live demo
+
+A live Hyprland session on a virtual monitor using the Hyprland, Waybar, Alacritty and Rofi settings evaluated from this repository’s Nix modules.
+
+https://github.com/user-attachments/assets/f912e0d2-6acf-45cf-b1fd-697d42a3a4b8
+
 ## ✨ Highlights
 
 * ❄️ Declarative **NixOS** configuration
